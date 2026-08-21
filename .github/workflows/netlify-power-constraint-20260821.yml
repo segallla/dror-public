@@ -6,7 +6,7 @@ on:
       - '.github/workflows/netlify-power-constraint-20260821.yml'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   deploy:
@@ -112,15 +112,25 @@ jobs:
               deploy_id: info.deploy_id,
               site_url: siteUrl,
               claim_url: claimUrl,
+              source_sha1: hash,
             };
 
-            console.log(`NETLIFY_RESULT=${JSON.stringify(result)}`);
-            fs.appendFileSync(
-              process.env.GITHUB_STEP_SUMMARY,
-              `## Netlify deploy complete\n\n- Live site: ${siteUrl}\n- Claim project: ${claimUrl}\n`,
+            fs.writeFileSync(
+              '.netlify-power-constraint-20260821/result.json',
+              `${JSON.stringify(result, null, 2)}\n`,
             );
+            console.log(`NETLIFY_RESULT=${JSON.stringify(result)}`);
           })().catch((error) => {
             console.error(error);
             process.exit(1);
           });
           NODE
+
+      - name: Save deployment links temporarily
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .netlify-power-constraint-20260821/result.json
+          git commit -m "Store temporary Netlify deployment result [skip ci]"
+          git push
