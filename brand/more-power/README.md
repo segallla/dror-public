@@ -31,7 +31,7 @@ CMYK and Pantone matches are in the guidelines; confirm them on a printed swatch
 
 ## Rebuilding
 
-`./build.sh` regenerates every file. It needs Python 3 with `fonttools skia-pathops uharfbuzz cairosvg` and
+`./build.sh` regenerates every file. It uses the logo-design skill in `.claude/skills/logo-design` (branch `claude/add-logo-design-skill`) and needs Python 3 with `fonttools skia-pathops uharfbuzz cairosvg` and
 Inter Display (SIL Open Font License) installed; the font path is `FONT_DIR` in `source/make8.py`.
 
 The trademark has not been searched. Run a professional search before registering or printing at scale.
