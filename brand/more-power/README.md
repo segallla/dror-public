@@ -1,7 +1,7 @@
 # MORE POWER — logo kit
 
 Each O in the name is a power switch: MORE is navy with a blue switch, POWER is blue with a navy switch.
-The mark puts the same two Os back to back, overlapping like a transformer.
+The mark puts the same two Os side by side; where they meet they share one core, held by both rings.
 
 Open `guidelines/more-power-guidelines.html` first: it covers versions, clear space, minimum sizes, colours,
 typography and misuse.

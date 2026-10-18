@@ -28,7 +28,7 @@ dont_html = "".join(
 files = [("logo/more-power-wordmark.svg", "Primary logo, light backgrounds"),
          ("logo/more-power-wordmark-reversed.svg", "Primary logo, dark backgrounds (strokes thinned 3%)"),
          ("logo/more-power-mark.svg · -reversed.svg", "Mark: icons, avatars, patterns"),
-         ("logo/more-power-mark-small.svg · -reversed.svg", "Mark, heavier cut for 24–48 px"),
+         ("logo/more-power-mark-small.svg · -reversed.svg", "Mark for 24–48 px: heavier rings, core left open"),
          ("logo/more-power-shared-o.svg · -reversed.svg", "Secondary lockup for square formats"),
          ("logo/more-power-favicon-source.svg", "Single O for 16–24 px (favicon)"),
          ("variants/", "Black, white and one-colour navy versions"),
@@ -76,7 +76,7 @@ ul{{margin:0;padding-left:20px}} li{{margin:4px 0}}
 <p class="lead">How to use the logo, its colours and its files. Keep this page next to the logo files.</p>
 
 <section><h2>1. The idea</h2>
-<p class="sub">Each O in the name is a power switch. MORE is navy with a blue switch; POWER is blue with a navy switch. The mark puts the same two Os back to back, overlapping like a transformer.</p>
+<p class="sub">Each O in the name is a power switch. MORE is navy with a blue switch; POWER is blue with a navy switch. The mark puts the same two Os side by side; where they meet they share one core, held by both rings.</p>
 <div class="hero">{svg(WM)}</div></section>
 
 <section><h2>2. Versions</h2><p class="sub">Use the primary logo wherever it fits. The other versions are for the formats named under each one.</p>
@@ -96,7 +96,7 @@ ul{{margin:0;padding-left:20px}} li{{margin:4px 0}}
 <div class="sizes">
 <figure>{svg(WM, style="width:120px")}<figcaption>Primary: 120 px / 30 mm wide</figcaption></figure>
 <figure>{svg(SO, style="width:80px")}<figcaption>Secondary: 80 px / 22 mm wide</figcaption></figure>
-<figure>{svg(MK, style="width:40px")}<figcaption>Mark: 40 px / 12 mm wide<br>(small cut from 24 px)</figcaption></figure>
+<figure>{svg(MK, style="width:48px")}<figcaption>Mark with core: 48 px / 14 mm wide<br>(small cut from 24 px)</figcaption></figure>
 <figure>{svg(FAV, style="width:16px")}<figcaption>Single O: 16 px</figcaption></figure>
 </div></section>
 

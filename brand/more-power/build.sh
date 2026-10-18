@@ -4,7 +4,8 @@
 # (the scripts read it from /usr/share/fonts/opentype/inter/; change FONT_DIR in source/make8.py if needed).
 set -euo pipefail
 cd "$(dirname "$0")"
-SKILL=../../.claude/skills/logo-design/scripts
+# The logo-design skill's scripts; override with LOGO_SKILL=/path/to/logo-design/scripts
+SKILL=${LOGO_SKILL:-../../.claude/skills/logo-design/scripts}
 python3 source/build_logos.py logo
 python3 source/favicon.py logo
 for f in more-power-wordmark more-power-mark more-power-shared-o; do
@@ -18,4 +19,5 @@ python3 "$SKILL/export_variants.py" logo/more-power-mark.svg --out-dir "$tmp" --
 cp "$tmp"/favicon.ico "$tmp"/favicon.svg "$tmp"/favicon-16.png "$tmp"/favicon-32.png "$tmp"/favicon-48.png "$tmp"/more-power-favicon.svg web/
 python3 source/animation.py animation
 python3 source/guidelines.py .
-echo "done"
+python3 "$SKILL/presentation_board.py" presentation/spec.json -o presentation/more-power-presentation.html
+echo "done (slide PNGs: screenshot presentation/more-power-presentation.html, one per .slide)"

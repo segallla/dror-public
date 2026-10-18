@@ -11,12 +11,13 @@ wm = k.wordmark(face, **OPEN); pad = 0.6 * wm["stem"]; top = k.bounds(wm["bars"]
 vb = (-pad, top - pad, wm["width"] + 2 * pad, wm["base"] + 24 * wm["s"] - top + 2 * pad)
 k.svg(f"{D}/more-power-wordmark.svg", k.wordmark_parts(wm, accent=DEEP, power=DEEP), vb)
 k.svg(f"{D}/more-power-wordmark-reversed.svg", k.wordmark_parts(wm, ink=LIGHT, reversed_=True, power=BLUE), vb)
-mk = k.mark(face, gap_k=0.25, rise_k=0.0, bar_end=0.46, bar_k=0.91)
-k.mark_svg(f"{D}/more-power-mark.svg", mk, accent=DEEP)
-k.mark_svg(f"{D}/more-power-mark-reversed.svg", mk, ink=LIGHT, reversed_=True)
-small = k.mark(face, stroke_k=0.38, d_k=1.56, gap_k=0.36, rise_k=0.0, bar_k=0.95, bar_end=0.48)
-k.mark_svg(f"{D}/more-power-mark-small.svg", small, accent=DEEP, pad_k=0.04)
-k.mark_svg(f"{D}/more-power-mark-small-reversed.svg", small, ink=LIGHT, pad_k=0.04)
+import mark_v2                                                   # two identical rings, one deliberate core
+mk = mark_v2.build(style="protected")
+mark_v2.save(f"{D}/more-power-mark.svg", mk)
+mark_v2.save(f"{D}/more-power-mark-reversed.svg", mk, ink=LIGHT, blue=BLUE, core=LIGHT)
+small = mark_v2.build(style="node", w_k=0.36, gap_k=0.36, bar_k=0.95)   # 24–48 px: core dropped, overlap left open
+mark_v2.save(f"{D}/more-power-mark-small.svg", small)
+mark_v2.save(f"{D}/more-power-mark-small-reversed.svg", small, ink=LIGHT, blue=BLUE)
 for dark in (False, True):
     parts, v = bigo11.build("split", dark=dark, **OPEN)
     k.svg(f"{D}/more-power-shared-o{'-reversed' if dark else ''}.svg", parts, v)
