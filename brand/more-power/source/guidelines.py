@@ -34,7 +34,7 @@ files = [("logo/more-power-wordmark.svg", "Primary logo, light backgrounds"),
          ("variants/", "Black, white and one-colour navy versions"),
          ("png/", "High-resolution transparent PNGs"),
          ("web/", "favicon.ico, PNG icons, webmanifest and head snippet"),
-         ("animation/more-power-switch-on.html", "Switch-on animation (1.8 s)"),
+         ("animation/more-power-switch-on.html", "Switch-on animation (CSS only, 5 s loop)"),
          ("presentation/", "Presentation board and mockups"),
          ("source/", "Scripts that rebuild every file from the font")]
 vbw = float(re.search(r'viewBox="([^"]+)"', open(os.path.join(ROOT, "logo", WM)).read()).group(1).split()[2])

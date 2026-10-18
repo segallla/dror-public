@@ -12,7 +12,7 @@ typography and misuse.
 | `variants/` | Black, white and one-colour navy versions |
 | `png/` | High-resolution transparent PNGs |
 | `web/` | `favicon.ico`, PNG icons, `site.webmanifest`, `head-snippet.html` |
-| `animation/` | Switch-on animation (HTML, 1.8 s, respects reduced motion) |
+| `animation/` | Switch-on animation (HTML, CSS only, 5 s loop, respects reduced motion) |
 | `presentation/` | Presentation board (`more-power-presentation.html`) and slide PNGs |
 | `boards/` | Overview boards from the design rounds |
 | `guidelines/` | One-page usage guidelines |
