@@ -1,0 +1,36 @@
+{
+  "brand": "MORE POWER",
+  "tagline": "Power builds place",
+  "brief": "An investment fund that acquires industrial and logistics assets with large existing grid connections. The identity should feel disciplined, durable and confident, with one clear idea about power that investors remember.",
+  "adjectives": ["disciplined", "durable", "confident", "energetic"],
+  "criteria": "Success: one idea, readable as a name at any size, works in one colour and reversed, ownable beyond the generic power icon.",
+  "mockups": ["business-card", "signage", "website", "app-icon", "social", "favicon-tab"],
+  "nav": ["Strategy", "Portfolio", "Investors", "Contact"],
+  "brand_color": "#0B1E3A",
+  "tile_color": "#0B1E3A",
+  "greyscale": false,
+  "final": true,
+  "designer": "MORE POWER",
+  "concepts": [
+    {
+      "name": "MORE POWER",
+      "symbol": "../logo/more-power-mark.svg",
+      "lockup": "../logo/more-power-wordmark.svg",
+      "stacked": "../logo/more-power-shared-o.svg",
+      "symbol_on_tile": "../logo/more-power-mark-reversed.svg",
+      "symbol_on_dark": "../logo/more-power-mark-reversed.svg",
+      "lockup_on_dark": "../logo/more-power-wordmark-reversed.svg",
+      "stacked_on_dark": "../logo/more-power-shared-o-reversed.svg",
+      "stacked_on_tile": "../logo/more-power-shared-o-reversed.svg",
+      "lockup_on_tile": "../logo/more-power-wordmark-reversed.svg",
+      "idea": "Each O in the name is a power switch: MORE is navy with a blue switch, POWER is blue with a navy switch, and the mark puts the two back to back.",
+      "rationale": [
+        "One idea, carried by a single detail in the name",
+        "The mark is literally the two Os of the name",
+        "Built on Inter Display with custom Os, outlined, no live type"
+      ]
+    }
+  ],
+  "recommendation": "Use the one-line wordmark as the primary logo, the shared-O lockup for square formats, and the mark for icons.",
+  "next_steps": ["Trademark search", "Roll out to deck, website and signage", "Brand guidelines sign-off"]
+}
