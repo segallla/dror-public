@@ -2,10 +2,27 @@
   "brand": "MORE POWER",
   "tagline": "Power builds place",
   "brief": "An investment fund that acquires industrial and logistics assets with large existing grid connections. The identity should feel disciplined, durable and confident, with one clear idea about power that investors remember.",
-  "adjectives": ["disciplined", "durable", "confident", "energetic"],
+  "adjectives": [
+    "disciplined",
+    "durable",
+    "confident",
+    "energetic"
+  ],
   "criteria": "Success: one idea, readable as a name at any size, works in one colour and reversed, ownable beyond the generic power icon.",
-  "mockups": ["business-card", "signage", "website", "app-icon", "social", "favicon-tab"],
-  "nav": ["Strategy", "Portfolio", "Investors", "Contact"],
+  "mockups": [
+    "business-card",
+    "signage",
+    "website",
+    "app-icon",
+    "social",
+    "favicon-tab"
+  ],
+  "nav": [
+    "Strategy",
+    "Portfolio",
+    "Investors",
+    "Contact"
+  ],
   "brand_color": "#0B1E3A",
   "tile_color": "#0B1E3A",
   "greyscale": false,
@@ -16,21 +33,25 @@
       "name": "MORE POWER",
       "symbol": "../logo/more-power-mark.svg",
       "lockup": "../logo/more-power-wordmark.svg",
-      "stacked": "../logo/more-power-shared-o.svg",
+      "stacked": "../logo/more-power-stacked.svg",
       "symbol_on_tile": "../logo/more-power-mark-reversed.svg",
       "symbol_on_dark": "../logo/more-power-mark-reversed.svg",
       "lockup_on_dark": "../logo/more-power-wordmark-reversed.svg",
-      "stacked_on_dark": "../logo/more-power-shared-o-reversed.svg",
-      "stacked_on_tile": "../logo/more-power-shared-o-reversed.svg",
+      "stacked_on_dark": "../logo/more-power-stacked-reversed.svg",
+      "stacked_on_tile": "../logo/more-power-stacked-reversed.svg",
       "lockup_on_tile": "../logo/more-power-wordmark-reversed.svg",
-      "idea": "Each O in the name is a power switch: MORE is navy with a blue switch, POWER is blue with a navy switch, and in the mark the two meet in one shared core.",
+      "idea": "Each O in the name is a power switch: MORE is navy with a blue switch, POWER is blue with a navy switch. In the mark, the two switches are coupled and meet in one shared core.",
       "rationale": [
-        "One idea, carried by a single detail in the name",
-        "The mark is literally the two Os of the name",
-        "Built on Inter Display with custom Os, outlined, no live type"
+        "Two words, two power switches, one connected system",
+        "The mark is the two Os of the name, coupled like circuits",
+        "Inter Display with custom Os; outlined artwork, no live type"
       ]
     }
   ],
-  "recommendation": "Use the one-line wordmark as the primary logo, the shared-O lockup for square formats, and the mark for icons.",
-  "next_steps": ["Trademark search", "Roll out to deck, website and signage", "Brand guidelines sign-off"]
+  "recommendation": "Primary wordmark for general use, stacked lockup for square formats and signage, the mark for icons and avatars, and the shared-O lockup only for expressive campaign use.",
+  "next_steps": [
+    "Trademark search",
+    "Roll out to deck, website and signage",
+    "Brand guidelines sign-off"
+  ]
 }

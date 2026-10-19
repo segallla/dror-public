@@ -1,40 +1,48 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>MORE POWER Guidelines</title>
 <style>
-:root{--bg:#F4F5F7;--card:#fff;--ink:#0B1E3A;--muted:#5b6b82;--line:#dde2ea;--accent:#0096DB}
+:root{--bg:#F4F5F7;--card:#fff;--ink:#0B1E3A;--muted:#5b6b82;--line:#dde2ea}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1424;--card:#111e33;--ink:#e8eef6;--muted:#9aaac0;--line:#24334d}}
 :root[data-theme="dark"]{--bg:#0a1424;--card:#111e33;--ink:#e8eef6;--muted:#9aaac0;--line:#24334d}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif}
 main{max-width:1080px;margin:0 auto;padding:40px 16px 80px}
-h1{font:700 36px/1.15 "Inter Display",Inter,sans-serif;margin:0 0 6px} h2{font:700 22px/1.2 "Inter Display",Inter,sans-serif;margin:0 0 6px}
-.lead{color:var(--muted);margin:0 0 32px;max-width:720px} p{max-width:760px}
-section{background:var(--card);border-radius:18px;padding:28px;margin:0 0 20px}
-.sub{color:var(--muted);margin:0 0 20px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.tile{border:1px solid var(--line);border-radius:14px;padding:28px 20px 16px;display:flex;flex-direction:column;align-items:center;gap:14px;background:#fff;color:#0B1E3A}
-.tile.dark{background:#0B1E3A;color:#e8eef6;border-color:#0B1E3A} .tile small{color:inherit;opacity:.7}
-.tile svg{width:100%;max-height:110px}
-.hero{background:#fff;border-radius:14px;padding:48px 24px;display:flex;justify-content:center} .hero svg{width:min(760px,100%)}
-.cs{--w:min(560px,70vw);--x:calc(var(--w) * 0.0520);position:relative;display:inline-block;padding:var(--x);border:1.5px dashed #0096DB;background:repeating-linear-gradient(45deg,rgba(0,150,219,.07) 0 8px,transparent 8px 16px)}
-.cs .inner{background:#fff;display:block} .cs svg{display:block;width:var(--w)}
-.cs .x{position:absolute;left:0;top:50%;transform:translateY(-50%);width:var(--x);text-align:center;font:600 13px Inter;color:#0096DB}
-.sizes{display:flex;gap:32px;align-items:flex-end;flex-wrap:wrap} .sizes figure{margin:0} .sizes figcaption{color:var(--muted);font-size:13px;margin-top:8px}
+h1{font:700 36px/1.15 "Inter Display",Inter,sans-serif;margin:0 0 6px} h2{font:700 22px/1.2 "Inter Display",Inter,sans-serif;margin:0 0 8px}
+h3{font:600 15px Inter,sans-serif;margin:18px 0 6px}
+.lead{color:var(--muted);margin:0 0 28px;max-width:720px} p{max-width:780px;margin:0 0 12px}
+section{background:var(--card);border-radius:18px;padding:28px;margin:0 0 20px;break-inside:avoid}
+.sub{color:var(--muted)}
+.principle{font:600 22px/1.35 "Inter Display",Inter,sans-serif;margin:18px 0 6px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.tile{position:relative;border:1px solid var(--line);border-radius:14px;padding:30px 18px 16px;display:flex;flex-direction:column;align-items:center;gap:8px;background:#fff;color:#0B1E3A;text-align:center}
+.tile.dark{background:#0B1E3A;color:#e8eef6;border-color:#0B1E3A} .tile svg{width:90%;margin-bottom:6px}
+.tile small{opacity:.75;font-size:13px} .tile code{font-size:11.5px;opacity:.6} .tile .n{position:absolute;left:12px;top:8px;font:700 13px Inter;opacity:.5}
+.hero{background:#fff;border-radius:14px;padding:44px 24px;display:flex;justify-content:center;margin-top:16px} .hero svg{width:min(760px,100%)}
+.csrow{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start} .csf{margin:0}
+.cs{position:relative;display:inline-block;padding:var(--x);border:1.5px dashed #0096DB;background:repeating-linear-gradient(45deg,rgba(0,150,219,.08) 0 8px,transparent 8px 16px)}
+.cs .inner{background:#fff;display:block}
+.cs .x{position:absolute;left:0;top:50%;transform:translateY(-50%);width:var(--x);text-align:center;font:600 12px Inter;color:#0096DB}
 .sw{border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:2px;font-size:14px}
-.chip{height:84px;border-radius:10px;margin-bottom:10px;border:1px solid var(--line)} .sw code{font-size:14px} .sw span{color:var(--muted)} .sw em{margin-top:6px;font-style:normal}
-.dont{margin:0} .dbox{background:#fff;border:1px solid var(--line);border-radius:14px;height:130px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.chip{height:76px;border-radius:10px;margin-bottom:10px;border:1px solid var(--line)} .sw span{color:var(--muted)}
+.dot{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:8px;vertical-align:-2px;border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0 4px} th{text-align:left;font-weight:600;color:var(--muted);padding:8px 6px}
+td{padding:8px 6px;border-top:1px solid var(--line);vertical-align:top} td code{font-size:13px}
+.rule{border-left:3px solid #0096DB;padding:8px 14px;margin:14px 0 0;background:rgba(0,150,219,.06);border-radius:0 8px 8px 0}
+.dont{margin:0} .dbox{background:#fff;border:1px solid var(--line);border-radius:14px;height:124px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
 .dbox::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - 1.5px),#e5484d calc(50% - 1.5px),#e5484d calc(50% + 1.5px),transparent calc(50% + 1.5px))}
-.dbox svg{width:72%} .busy .dbox{background:repeating-linear-gradient(60deg,#7fb8d8 0 14px,#2a6f97 14px 28px)}
-.dont figcaption{font-size:14px;margin-top:8px}
-table{width:100%;border-collapse:collapse;font-size:14px} td{padding:8px 6px;border-top:1px solid var(--line);vertical-align:top} td code{font-size:13px}
-ul{margin:0;padding-left:20px} li{margin:4px 0}
+.busy .dbox{background:repeating-linear-gradient(60deg,#7fb8d8 0 14px,#2a6f97 14px 28px)} .dont figcaption{font-size:14px;margin-top:8px}
+ul{margin:0;padding-left:20px} li{margin:5px 0}
+.legal{border:2px solid #e5484d;} .legal h2{color:#c4373c}
 @media (max-width:560px){section{padding:20px} h1{font-size:28px}}
+@media print{body{background:#fff} section{border:1px solid #dde2ea}}
 </style></head><body><main>
 <h1>MORE POWER · Logo guidelines</h1>
-<p class="lead">How to use the logo, its colours and its files. Keep this page next to the logo files.</p>
+<p class="lead">Version 1.0 · How to use the logo, its colours and its files. Keep this guide with the logo files.</p>
 
 <section><h2>1. The idea</h2>
-<p class="sub">Each O in the name is a power switch. MORE is navy with a blue switch; POWER is blue with a navy switch. The mark puts the same two Os side by side; where they meet they share one core, held by both rings.</p>
-<div class="hero"><svg class="" style="" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
+<p>Each O in the name becomes a power switch. MORE is navy with a blue switch; POWER is blue with a navy switch. Together they express two complementary forces, real assets and power capacity, working as one system. In the standalone mark, the two switches are coupled like circuits and meet in one shared core.</p>
+<p class="principle">Two words. Two power switches. One connected system.</p>
+<p class="sub">MORE represents the assets and the platform. POWER represents the capacity they unlock. The reciprocal colours connect the two, and the coupled mark expresses cooperation, transfer and shared momentum.</p>
+<div class="hero"><svg style="" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
   <title>MORE POWER</title>
   <path fill="#0B1E3A" d="M7.27 103.04V15.73H29.53L46.52 61.61C48.16 66.48 50.98 75.21 53.03 82C55.08 75.21 57.89 66.48 59.47 61.61L76.17 15.73H98.55V103.04H83.32V58.51C83.32 52.36 83.61 42.69 83.85 33.72C80.74 43.57 77.75 53.18 75.88 58.51L59.24 103.04H46.58L29.82 58.51C28.01 53.41 25.08 44.39 22.03 34.95C22.21 43.57 22.5 52.65 22.5 58.51V103.04ZM215.51 103.04V15.73H249.55C268.77 15.73 280.78 26.52 280.78 43.62C280.78 55.52 274.57 64.25 264.2 68.47L282.43 103.04H265.37L248.97 71.28H230.98V103.04ZM297 103.04V15.73H357.64V29.15H312.47V52.12H354.24V65.3H312.47V89.62H357.64V103.04ZM230.98 58.51H248.79C259.11 58.51 265.55 52.77 265.55 43.62C265.55 34.54 259.11 28.86 248.68 28.86H230.98Z"/>
   <path fill="#0B1E3A" d="M200.74 59.39C200.74 84.27 181.17 104.45 157.03 104.45C132.89 104.45 113.33 84.27 113.33 59.39C113.33 38.58 127 21.07 145.59 15.89V31.2C135.69 35.99 128.79 46.81 128.79 59.39C128.79 76.41 141.44 90.21 157.03 90.21C172.63 90.21 185.27 76.41 185.27 59.39C185.27 46.81 178.37 35.99 168.48 31.2V15.89C187.07 21.07 200.74 38.58 200.74 59.39Z"/>
@@ -45,9 +53,8 @@ ul{margin:0;padding-left:20px} li{margin:4px 0}
 </svg>
 </div></section>
 
-<section><h2>2. Versions</h2><p class="sub">Use the primary logo wherever it fits. The other versions are for the formats named under each one.</p>
-<div class="grid">
-<div class="tile"><svg class="" style="" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
+<section><h2>2. Logo hierarchy</h2><p class="sub">Use the highest version in this list that fits the format. For entrance and distance signage use the primary or stacked logo, never the expressive shared-O lockup.</p>
+<div class="grid"><div class="tile"><span class="n">1</span><svg style="max-height:96px" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
   <title>MORE POWER</title>
   <path fill="#0B1E3A" d="M7.27 103.04V15.73H29.53L46.52 61.61C48.16 66.48 50.98 75.21 53.03 82C55.08 75.21 57.89 66.48 59.47 61.61L76.17 15.73H98.55V103.04H83.32V58.51C83.32 52.36 83.61 42.69 83.85 33.72C80.74 43.57 77.75 53.18 75.88 58.51L59.24 103.04H46.58L29.82 58.51C28.01 53.41 25.08 44.39 22.03 34.95C22.21 43.57 22.5 52.65 22.5 58.51V103.04ZM215.51 103.04V15.73H249.55C268.77 15.73 280.78 26.52 280.78 43.62C280.78 55.52 274.57 64.25 264.2 68.47L282.43 103.04H265.37L248.97 71.28H230.98V103.04ZM297 103.04V15.73H357.64V29.15H312.47V52.12H354.24V65.3H312.47V89.62H357.64V103.04ZM230.98 58.51H248.79C259.11 58.51 265.55 52.77 265.55 43.62C265.55 34.54 259.11 28.86 248.68 28.86H230.98Z"/>
   <path fill="#0B1E3A" d="M200.74 59.39C200.74 84.27 181.17 104.45 157.03 104.45C132.89 104.45 113.33 84.27 113.33 59.39C113.33 38.58 127 21.07 145.59 15.89V31.2C135.69 35.99 128.79 46.81 128.79 59.39C128.79 76.41 141.44 90.21 157.03 90.21C172.63 90.21 185.27 76.41 185.27 59.39C185.27 46.81 178.37 35.99 168.48 31.2V15.89C187.07 21.07 200.74 38.58 200.74 59.39Z"/>
@@ -56,8 +63,7 @@ ul{margin:0;padding-left:20px} li{margin:4px 0}
   <path fill="#0096DB" d="M568.69 59.39C568.69 84.27 549.12 104.45 524.98 104.45C500.84 104.45 481.27 84.27 481.27 59.39C481.27 38.58 494.95 21.07 513.53 15.89V31.2C503.64 35.99 496.74 46.81 496.74 59.39C496.74 76.41 509.38 90.21 524.98 90.21C540.58 90.21 553.22 76.41 553.22 59.39C553.22 46.81 546.32 35.99 536.43 31.2V15.89C555.01 21.07 568.69 38.58 568.69 59.39Z"/>
   <path fill="#0B1E3A" d="M518.17 21.13C518.17 17.38 521.22 14.33 524.98 14.33C528.74 14.33 531.79 17.38 531.79 21.13V48.98C531.79 52.73 528.74 55.78 524.98 55.78C521.22 55.78 518.17 52.73 518.17 48.98Z"/>
 </svg>
-<small>Primary · headers, documents, signage</small></div>
-<div class="tile dark"><svg class="" style="" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
+<b>Primary</b><small>Default everywhere: documents, website header, presentations, signage</small><code>logo/more-power-wordmark.svg</code></div><div class="tile dark"><span class="n">2</span><svg style="max-height:96px" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
   <title>MORE POWER</title>
   <path fill="#F8FAFC" d="M59.91 61.76 76.5 16.2H98.09V102.57H83.78V58.51Q83.78 53.39 84.19 38.26Q84.27 35.23 84.31 33.73L83.41 33.58Q82.92 35.13 81.96 38.19Q77.02 53.87 75.44 58.35L58.92 102.57H46.9L30.26 58.34Q28.28 52.8 22.47 34.81L21.57 34.96Q21.63 37.81 21.77 43.53Q22.04 54.59 22.04 58.51V102.57H7.73V16.2H29.21L46.09 61.77Q49.41 71.63 52.58 82.14L53.03 83.61L53.47 82.14Q55.87 74.18 59.91 61.76ZM281.66 102.57H265.66L249.25 70.82H230.52V102.57H215.98V16.2H249.55Q263.78 16.2 272.07 23.61Q280.32 30.99 280.32 43.62Q280.32 61.41 264.03 68.04L263.55 68.23L281.66 102.57ZM353.78 52.59V64.84H312V90.09H357.18V102.57H297.46V16.2H357.18V28.69H312V52.59H353.78ZM230.52 58.97H248.79Q256.7 58.97 261.35 54.84Q266.01 50.69 266.01 43.62Q266.01 36.6 261.33 32.49Q256.66 28.4 248.68 28.4H230.52Z"/>
   <path fill="#F8FAFC" d="M200.28 59.39Q200.28 77.86 187.61 90.93Q174.94 103.98 157.03 103.98Q139.12 103.98 126.46 90.93Q113.79 77.86 113.79 59.39Q113.79 44.1 122.86 32.06Q131.58 20.48 145.12 16.5V30.91Q137.65 34.62 133.08 42.13Q128.33 49.96 128.33 59.39Q128.33 72.34 136.72 81.5Q145.13 90.68 157.03 90.68Q168.93 90.68 177.34 81.5Q185.74 72.34 185.74 59.39Q185.74 49.96 180.98 42.13Q176.42 34.62 168.94 30.91V16.5Q182.49 20.48 191.21 32.06Q200.28 44.1 200.28 59.39Z"/>
@@ -66,8 +72,24 @@ ul{margin:0;padding-left:20px} li{margin:4px 0}
   <path fill="#00B0FF" d="M568.22 59.39Q568.22 77.86 555.55 90.93Q542.89 103.98 524.98 103.98Q507.07 103.98 494.41 90.93Q481.74 77.86 481.74 59.39Q481.74 44.1 490.8 32.06Q499.52 20.48 513.07 16.5V30.91Q505.59 34.62 501.03 42.13Q496.28 49.96 496.28 59.39Q496.28 72.34 504.67 81.5Q513.08 90.68 524.98 90.68Q536.88 90.68 545.29 81.5Q553.68 72.34 553.68 59.39Q553.68 49.96 548.93 42.13Q544.37 34.62 536.89 30.91V16.5Q550.43 20.48 559.16 32.06Q568.22 44.1 568.22 59.39Z"/>
   <path fill="#F8FAFC" d="M518.64 21.13Q518.64 18.51 520.49 16.65Q522.35 14.79 524.98 14.79Q527.61 14.79 529.46 16.65Q531.32 18.51 531.32 21.13V48.98Q531.32 51.6 529.46 53.46Q527.61 55.32 524.98 55.32Q522.35 55.32 520.49 53.46Q518.64 51.6 518.64 48.98Z"/>
 </svg>
-<small>Primary reversed · dark backgrounds</small></div>
-<div class="tile"><svg class="" style="" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 -97.99 626.03 225.67" role="img">
+<b>Primary reversed</b><small>The same on navy or other dark backgrounds</small><code>logo/more-power-wordmark-reversed.svg</code></div><div class="tile"><span class="n">3</span><svg style="max-height:96px" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 -97.99 468.06 227.41" role="img">
+  <title>MORE POWER</title>
+  <path fill="#0B1E3A" d="M7.27 0V-87.3H29.53L46.52 -41.43C48.16 -36.56 50.98 -27.83 53.03 -21.04C55.08 -27.83 57.89 -36.56 59.47 -41.43L76.17 -87.3H98.55V0H83.32V-44.53C83.32 -50.68 83.61 -60.35 83.85 -69.32C80.74 -59.47 77.75 -49.86 75.88 -44.53L59.24 0H46.58L29.82 -44.53C28.01 -49.63 25.08 -58.65 22.03 -68.09C22.21 -59.47 22.5 -50.39 22.5 -44.53V0ZM215.51 0V-87.3H249.55C268.77 -87.3 280.78 -76.52 280.78 -59.41C280.78 -47.52 274.57 -38.79 264.2 -34.57L282.43 0H265.37L248.97 -31.76H230.98V0ZM297 0V-87.3H357.64V-73.89H312.47V-50.92H354.24V-37.73H312.47V-13.42H357.64V0ZM230.98 -44.53H248.79C259.11 -44.53 265.55 -50.27 265.55 -59.41C265.55 -68.5 259.11 -74.18 248.68 -74.18H230.98Z"/>
+  <path fill="#0B1E3A" d="M200.74 -43.65C200.74 -18.77 181.17 1.41 157.03 1.41C132.89 1.41 113.33 -18.77 113.33 -43.65C113.33 -64.45 127 -81.96 145.59 -87.15V-71.84C135.69 -67.05 128.79 -56.23 128.79 -43.65C128.79 -26.63 141.44 -12.82 157.03 -12.82C172.63 -12.82 185.27 -26.63 185.27 -43.65C185.27 -56.23 178.37 -67.05 168.48 -71.84V-87.15C187.07 -81.96 200.74 -64.45 200.74 -43.65Z"/>
+  <path fill="#0096DB" d="M150.23 -81.9C150.23 -85.66 153.27 -88.71 157.03 -88.71C160.79 -88.71 163.84 -85.66 163.84 -81.9V-54.06C163.84 -50.3 160.79 -47.26 157.03 -47.26C153.27 -47.26 150.23 -50.3 150.23 -54.06Z"/>
+  <path fill="#0096DB" d="M198.58 118.73 175.02 31.43H191.37L202.91 78.48C204.67 86.1 206.31 93.71 207.78 101.39C209.36 93.71 211.06 86.1 212.93 78.48L224.95 31.43H241.29L253.19 78.48C255.06 86.04 256.76 93.6 258.34 101.1C259.87 93.6 261.51 86.04 263.27 78.48L274.81 31.43H291.21L267.6 118.73H250.08L236.72 68.23C235.43 63.42 234.32 58.21 233.09 52.41C231.86 58.21 230.75 63.42 229.46 68.23L216.16 118.73ZM379.48 118.73V31.43H413.52C432.74 31.43 444.75 42.21 444.75 59.32C444.75 71.21 438.54 79.95 428.17 84.16L446.39 118.73H429.34L412.93 86.98H394.95V118.73ZM7.27 118.73V31.43H40.61C59.77 31.43 71.78 42.21 71.78 59.32C71.78 76.49 59.47 87.33 40.31 87.33H22.73V118.73ZM303.44 118.73V31.43H364.09V44.85H318.91V67.82H360.69V81H318.91V105.32H364.09V118.73ZM394.95 74.2H412.76C423.07 74.2 429.52 68.46 429.52 59.32C429.52 50.24 423.07 44.55 412.64 44.55H394.95ZM22.73 74.09H39.73C50.16 74.09 56.54 68.46 56.54 59.32C56.54 50.24 50.16 44.67 39.73 44.67H22.73Z"/>
+  <path fill="#0096DB" d="M169.92 75.08C169.92 99.97 150.35 120.14 126.21 120.14C102.07 120.14 82.51 99.97 82.51 75.08C82.51 54.28 96.18 36.77 114.77 31.58V46.89C104.87 51.69 97.97 62.5 97.97 75.08C97.97 92.11 110.62 105.91 126.21 105.91C141.81 105.91 154.45 92.11 154.45 75.08C154.45 62.5 147.55 51.69 137.66 46.89V31.58C156.25 36.77 169.92 54.28 169.92 75.08Z"/>
+  <path fill="#0B1E3A" d="M119.41 36.83C119.41 33.07 122.45 30.02 126.21 30.02C129.97 30.02 133.02 33.07 133.02 36.83V64.67C133.02 68.43 129.97 71.48 126.21 71.48C122.45 71.48 119.41 68.43 119.41 64.67Z"/>
+</svg>
+<b>Stacked</b><small>Square and vertical formats; entrance and wayfinding signs</small><code>logo/more-power-stacked.svg</code></div><div class="tile"><span class="n">4</span><svg style="max-height:96px" xmlns="http://www.w3.org/2000/svg" viewBox="-26.05 -26.05 435.74 260.1" role="img">
+  <title>MORE POWER</title>
+  <path fill="#0B1E3A" d="M192.65 150.32C175.95 182.23 142.52 204 104 204C48.77 204 4 159.23 4 104C4 56.07 37.71 16.02 82.72 6.27V35.2C53.34 44.27 32 71.64 32 104C32 143.77 64.23 176 104 176C140.01 176 169.84 149.57 175.16 115.05Q176.7 130.14 182.51 144.11Q184.11 147.95 187.95 149.55Q190.3 150.53 192.65 150.32ZM175.16 92.95C170.93 65.53 151.25 43.22 125.28 35.2V6.27C154.59 12.62 179.11 31.82 192.65 57.68Q190.32 57.48 187.98 58.44Q184.12 60.03 182.51 63.89Q176.7 77.86 175.16 92.95Z"/>
+  <path fill="#0096DB" d="M91.12 16.88C91.12 9.77 96.89 4 104 4C111.11 4 116.88 9.77 116.88 16.88V83.12C116.88 90.23 111.11 96 104 96C96.89 96 91.12 90.23 91.12 83.12Z"/>
+  <path fill="#0096DB" d="M379.64 104C379.64 159.23 334.87 204 279.64 204C241.12 204 207.69 182.23 190.99 150.32Q193.32 150.52 195.66 149.56Q199.52 147.97 201.13 144.11Q206.94 130.14 208.48 115.05C213.8 149.57 243.63 176 279.64 176C319.41 176 351.64 143.77 351.64 104C351.64 71.64 330.3 44.27 300.92 35.2V6.27C345.93 16.02 379.64 56.07 379.64 104ZM190.99 57.68C204.53 31.82 229.05 12.62 258.36 6.27V35.2C232.39 43.22 212.71 65.53 208.48 92.95Q206.94 77.86 201.13 63.89Q199.53 60.05 195.69 58.45Q193.34 57.47 190.99 57.68Z"/>
+  <path fill="#0B1E3A" d="M266.76 16.88C266.76 9.77 272.53 4 279.64 4C286.75 4 292.52 9.77 292.52 16.88V83.12C292.52 90.23 286.75 96 279.64 96C272.53 96 266.76 90.23 266.76 83.12Z"/>
+  <path fill="#00B0FF" d="M198.96 104Q198.96 123.08 191.82 140.24Q184.68 123.08 184.68 104Q184.68 84.92 191.82 67.76Q198.96 84.92 198.96 104Z"/>
+</svg>
+<b>Mark</b><small>App icon, avatar, patterns, merchandise — never with the name inside it</small><code>logo/more-power-mark.svg</code></div><div class="tile"><span class="n">5</span><svg style="max-height:96px" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 -97.99 626.03 225.67" role="img">
   <title>MORE POWER</title>
   <path fill="#0B1E3A" d="M7.27 0V-87.3H29.53L46.52 -41.43C48.16 -36.56 50.98 -27.83 53.03 -21.04C55.08 -27.83 57.89 -36.56 59.47 -41.43L76.17 -87.3H98.55V0H83.32V-44.53C83.32 -50.68 83.61 -60.35 83.85 -69.32C80.74 -59.47 77.75 -49.86 75.88 -44.53L59.24 0H46.58L29.82 -44.53C28.01 -49.63 25.08 -58.65 22.03 -68.09C22.21 -59.47 22.5 -50.39 22.5 -44.53V0Z"/>
   <path fill="#0B1E3A" d="M339.5 0V-87.3H373.54C392.76 -87.3 404.78 -76.52 404.78 -59.41C404.78 -47.52 398.56 -38.79 388.19 -34.57L406.42 0H389.36L372.96 -31.76H354.97V0ZM420.99 0V-87.3H481.63V-73.89H436.46V-50.92H478.23V-37.73H436.46V-13.42H481.63V0ZM354.97 -44.53H372.78C383.1 -44.53 389.54 -50.27 389.54 -59.41C389.54 -68.5 383.1 -74.18 372.67 -74.18H354.97Z"/>
@@ -77,35 +99,27 @@ ul{margin:0;padding-left:20px} li{margin:4px 0}
   <path fill="#0096DB" d="M319.47 14.84C319.47 72.03 274.5 118.39 219.03 118.39C163.55 118.39 118.58 72.03 118.58 14.84H141.79C141.79 60.24 176.37 97.05 219.03 97.05C261.69 97.05 296.27 60.24 296.27 14.84Z"/>
   <path fill="#0096DB" d="M208.82 -78.5C208.82 -84.14 213.39 -88.71 219.03 -88.71C224.67 -88.71 229.24 -84.14 229.24 -78.5V-3.65C229.24 1.99 224.67 6.56 219.03 6.56C213.39 6.56 208.82 1.99 208.82 -3.65Z"/>
 </svg>
-<small>Secondary · square formats, entrance signs</small></div>
-<div class="tile"><svg class="" style="" xmlns="http://www.w3.org/2000/svg" viewBox="-25.76 -25.76 431.52 259.52" role="img">
-  <title>MORE POWER</title>
-  <path fill="#0B1E3A" d="M190.17 154.78C172.77 184.24 140.69 204 104 204C48.77 204 4 159.23 4 104C4 56.07 37.71 16.02 82.72 6.27V35.2C53.34 44.27 32 71.64 32 104C32 143.77 64.23 176 104 176C137.43 176 165.54 153.21 173.65 122.32Q176.22 136.98 183 150.44Q184.16 152.76 186.47 153.92Q188.29 154.83 190.17 154.78ZM173.65 85.68C167.34 61.63 148.91 42.5 125.28 35.2V6.27C152.88 12.25 176.23 29.62 190.17 53.22Q188.87 53.2 187.54 53.64Q184.46 54.66 183 57.56Q176.22 71.02 173.65 85.68Z"/>
-  <path fill="#0096DB" d="M91.12 16.88C91.12 9.77 96.89 4 104 4C111.11 4 116.88 9.77 116.88 16.88V83.12C116.88 90.23 111.11 96 104 96C96.89 96 91.12 90.23 91.12 83.12Z"/>
-  <path fill="#0096DB" d="M376 104C376 159.23 331.23 204 276 204C239.31 204 207.23 184.24 189.83 154.78Q191.13 154.8 192.46 154.36Q195.54 153.34 197 150.44Q203.78 136.98 206.35 122.32C214.46 153.21 242.57 176 276 176C315.77 176 348 143.77 348 104C348 71.64 326.66 44.27 297.28 35.2V6.27C342.29 16.02 376 56.07 376 104ZM189.83 53.22C203.77 29.62 227.12 12.25 254.72 6.27V35.2C231.09 42.5 212.66 61.63 206.35 85.68Q203.78 71.02 197 57.56Q195.84 55.24 193.53 54.08Q191.71 53.17 189.83 53.22Z"/>
-  <path fill="#0B1E3A" d="M263.12 16.88C263.12 9.77 268.89 4 276 4C283.11 4 288.88 9.77 288.88 16.88V83.12C288.88 90.23 283.11 96 276 96C268.89 96 263.12 90.23 263.12 83.12Z"/>
-  <path fill="#00B0FF" d="M200.08 104Q200.08 126.9 190 146.92Q179.92 126.9 179.92 104Q179.92 81.1 190 61.08Q200.08 81.1 200.08 104Z"/>
-</svg>
-<small>Mark · app icon, avatar, patterns</small></div>
-<div class="tile dark"><svg class="" style="" xmlns="http://www.w3.org/2000/svg" viewBox="-25.76 -25.76 431.52 259.52" role="img">
-  <title>MORE POWER</title>
-  <path fill="#F8FAFC" d="M190.17 154.78C172.77 184.24 140.69 204 104 204C48.77 204 4 159.23 4 104C4 56.07 37.71 16.02 82.72 6.27V35.2C53.34 44.27 32 71.64 32 104C32 143.77 64.23 176 104 176C137.43 176 165.54 153.21 173.65 122.32Q176.22 136.98 183 150.44Q184.16 152.76 186.47 153.92Q188.29 154.83 190.17 154.78ZM173.65 85.68C167.34 61.63 148.91 42.5 125.28 35.2V6.27C152.88 12.25 176.23 29.62 190.17 53.22Q188.87 53.2 187.54 53.64Q184.46 54.66 183 57.56Q176.22 71.02 173.65 85.68Z"/>
-  <path fill="#00B0FF" d="M91.12 16.88C91.12 9.77 96.89 4 104 4C111.11 4 116.88 9.77 116.88 16.88V83.12C116.88 90.23 111.11 96 104 96C96.89 96 91.12 90.23 91.12 83.12Z"/>
-  <path fill="#00B0FF" d="M376 104C376 159.23 331.23 204 276 204C239.31 204 207.23 184.24 189.83 154.78Q191.13 154.8 192.46 154.36Q195.54 153.34 197 150.44Q203.78 136.98 206.35 122.32C214.46 153.21 242.57 176 276 176C315.77 176 348 143.77 348 104C348 71.64 326.66 44.27 297.28 35.2V6.27C342.29 16.02 376 56.07 376 104ZM189.83 53.22C203.77 29.62 227.12 12.25 254.72 6.27V35.2C231.09 42.5 212.66 61.63 206.35 85.68Q203.78 71.02 197 57.56Q195.84 55.24 193.53 54.08Q191.71 53.17 189.83 53.22Z"/>
-  <path fill="#F8FAFC" d="M263.12 16.88C263.12 9.77 268.89 4 276 4C283.11 4 288.88 9.77 288.88 16.88V83.12C288.88 90.23 283.11 96 276 96C268.89 96 263.12 90.23 263.12 83.12Z"/>
-  <path fill="#F8FAFC" d="M200.08 104Q200.08 126.9 190 146.92Q179.92 126.9 179.92 104Q179.92 81.1 190 61.08Q200.08 81.1 200.08 104Z"/>
-</svg>
-<small>Mark reversed</small></div>
-<div class="tile"><svg class="" style="max-height:80px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img">
+<b>Expressive shared-O</b><small>Campaigns, covers, posters and animation only — not for signage or official documents</small><code>logo/more-power-shared-o.svg</code></div><div class="tile"><span class="n">6</span><svg style="max-height:96px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img">
   <title>MORE POWER</title>
   <path fill="#0B1E3A" d="M240 134C240 195.86 189.86 246 128 246C66.14 246 16 195.86 16 134C16 82.04 51.38 38.34 99.37 25.69V66.05C74.03 77.47 56.32 103.6 56.32 134C56.32 174.92 88.41 208.1 128 208.1C167.59 208.1 199.68 174.92 199.68 134C199.68 103.6 181.97 77.47 156.63 66.05V25.69C204.62 38.34 240 82.04 240 134Z"/>
   <path fill="#0096DB" d="M109.86 40.14C109.86 30.12 117.98 22 128 22C138.02 22 146.14 30.12 146.14 40.14V115.86C146.14 125.88 138.02 134 128 134C117.98 134 109.86 125.88 109.86 115.86Z"/>
 </svg>
-<small>Single O · favicon, 16–24 px only</small></div>
-</div></section>
+<b>Single O</b><small>Favicon and other uses from 16 to 23 px</small><code>logo/more-power-favicon-source.svg</code></div></div></section>
 
-<section><h2>3. Clear space</h2><p class="sub">Keep a free margin of <b>X</b> on every side, where X is half the height of the O. Nothing else, including text, other logos or the edge of the page, goes inside it.</p>
-<div class="cs"><span class="x">X</span><span class="inner"><svg class="" style="" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
+<section><h2>3. Colour</h2>
+<div class="grid"><div class="sw"><div class="chip" style="background:#0B1E3A"></div><b>Navy</b><code>#0B1E3A</code><span>RGB 11 30 58</span><span>C100 M78 Y30 K55</span><span>Pantone 289 C</span></div><div class="sw"><div class="chip" style="background:#0096DB"></div><b>Deep blue</b><code>#0096DB</code><span>RGB 0 150 219</span><span>C85 M25 Y0 K0</span><span>Pantone 2925 C</span></div><div class="sw"><div class="chip" style="background:#00B0FF"></div><b>Electric blue</b><code>#00B0FF</code><span>RGB 0 176 255</span><span>C70 M10 Y0 K0</span><span>Pantone 2995 C</span></div><div class="sw"><div class="chip" style="background:#F8FAFC"></div><b>Off-white</b><code>#F8FAFC</code><span>RGB 248 250 252</span><span>paper white / white ink</span><span>Pantone —</span></div></div>
+<p class="sub" style="margin-top:14px">CMYK and Pantone values are close matches. Check them against a printed swatch book before the first print run.</p>
+<h3>Light and dark backgrounds</h3>
+<table><tr><th>Element</th><th>Light background</th><th>Dark background</th></tr><tr><td>MORE</td><td><i class="dot" style="background:#0B1E3A"></i>Navy</td><td><i class="dot" style="background:#F8FAFC"></i>Off-white</td></tr><tr><td>Switch in the O of MORE</td><td><i class="dot" style="background:#0096DB"></i>Deep blue</td><td><i class="dot" style="background:#00B0FF"></i>Electric blue</td></tr><tr><td>POWER (and its ring)</td><td><i class="dot" style="background:#0096DB"></i>Deep blue</td><td><i class="dot" style="background:#00B0FF"></i>Electric blue</td></tr><tr><td>Switch in the O of POWER</td><td><i class="dot" style="background:#0B1E3A"></i>Navy</td><td><i class="dot" style="background:#F8FAFC"></i>Off-white</td></tr><tr><td>Mark: left ring · right ring · core</td><td>Navy · Deep blue · Electric blue</td><td>Off-white · Electric blue · Off-white</td></tr></table>
+<p class="rule"><b>Rule:</b> on dark backgrounds every navy element reverses to off-white. Every blue element becomes electric blue.</p>
+<h3>Small sizes</h3>
+<p>For small digital use on light backgrounds, prefer the navy one-colour version whenever maximum contrast is needed (below 128 px wide, or in text-heavy interfaces). Deep blue on white has a contrast ratio of about 3.3:1. It is meant for the standard-size wordmark and display use. Electric blue on navy (about 6.9:1) is strong at every size.</p>
+<h3>One-colour versions</h3>
+<p>Black, white and navy (Pantone 289 C) versions are for single-colour printing and for embossing, engraving, laser cutting, embroidery, vinyl cutting and other one-colour production methods. For embroidery and cutting use the simplified files in <code>print/production/</code>. Don't make two-colour versions in other colours.</p></section>
+
+<section><h2>4. Clear space</h2>
+<p>X equals one half of the outer diameter of the power-button O in the primary wordmark. Measure clear space from the outermost edge of the artwork, including the tip of each switch, not from the text baseline or an internal counter. The stacked logo uses the same X. For the mark, X is one quarter of a ring's outer diameter. Nothing, including text, other logos or the edge of the page, goes inside the clear space.</p>
+<div class="csrow"><figure class="csf"><div class="cs" style="--w:520px;--x:calc(var(--w) * 0.0520)"><span class="x">X</span><span class="inner"><svg style="display:block;width:var(--w);max-width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
   <title>MORE POWER</title>
   <path fill="#0B1E3A" d="M7.27 103.04V15.73H29.53L46.52 61.61C48.16 66.48 50.98 75.21 53.03 82C55.08 75.21 57.89 66.48 59.47 61.61L76.17 15.73H98.55V103.04H83.32V58.51C83.32 52.36 83.61 42.69 83.85 33.72C80.74 43.57 77.75 53.18 75.88 58.51L59.24 103.04H46.58L29.82 58.51C28.01 53.41 25.08 44.39 22.03 34.95C22.21 43.57 22.5 52.65 22.5 58.51V103.04ZM215.51 103.04V15.73H249.55C268.77 15.73 280.78 26.52 280.78 43.62C280.78 55.52 274.57 64.25 264.2 68.47L282.43 103.04H265.37L248.97 71.28H230.98V103.04ZM297 103.04V15.73H357.64V29.15H312.47V52.12H354.24V65.3H312.47V89.62H357.64V103.04ZM230.98 58.51H248.79C259.11 58.51 265.55 52.77 265.55 43.62C265.55 34.54 259.11 28.86 248.68 28.86H230.98Z"/>
   <path fill="#0B1E3A" d="M200.74 59.39C200.74 84.27 181.17 104.45 157.03 104.45C132.89 104.45 113.33 84.27 113.33 59.39C113.33 38.58 127 21.07 145.59 15.89V31.2C135.69 35.99 128.79 46.81 128.79 59.39C128.79 76.41 141.44 90.21 157.03 90.21C172.63 90.21 185.27 76.41 185.27 59.39C185.27 46.81 178.37 35.99 168.48 31.2V15.89C187.07 21.07 200.74 38.58 200.74 59.39Z"/>
@@ -114,58 +128,39 @@ ul{margin:0;padding-left:20px} li{margin:4px 0}
   <path fill="#0096DB" d="M568.69 59.39C568.69 84.27 549.12 104.45 524.98 104.45C500.84 104.45 481.27 84.27 481.27 59.39C481.27 38.58 494.95 21.07 513.53 15.89V31.2C503.64 35.99 496.74 46.81 496.74 59.39C496.74 76.41 509.38 90.21 524.98 90.21C540.58 90.21 553.22 76.41 553.22 59.39C553.22 46.81 546.32 35.99 536.43 31.2V15.89C555.01 21.07 568.69 38.58 568.69 59.39Z"/>
   <path fill="#0B1E3A" d="M518.17 21.13C518.17 17.38 521.22 14.33 524.98 14.33C528.74 14.33 531.79 17.38 531.79 21.13V48.98C531.79 52.73 528.74 55.78 524.98 55.78C521.22 55.78 518.17 52.73 518.17 48.98Z"/>
 </svg>
-</span></div></section>
-
-<section><h2>4. Minimum size</h2><p class="sub">Below these sizes the switches stop reading. Switch to the smaller version listed instead.</p>
-<div class="sizes">
-<figure><svg class="" style="width:120px" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
+</span></div></figure><figure class="csf"><div class="cs" style="--w:250px;--x:calc(var(--w) * 0.0963)"><span class="x">X</span><span class="inner"><svg style="display:block;width:var(--w);max-width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 -97.99 468.06 227.41" role="img">
   <title>MORE POWER</title>
-  <path fill="#0B1E3A" d="M7.27 103.04V15.73H29.53L46.52 61.61C48.16 66.48 50.98 75.21 53.03 82C55.08 75.21 57.89 66.48 59.47 61.61L76.17 15.73H98.55V103.04H83.32V58.51C83.32 52.36 83.61 42.69 83.85 33.72C80.74 43.57 77.75 53.18 75.88 58.51L59.24 103.04H46.58L29.82 58.51C28.01 53.41 25.08 44.39 22.03 34.95C22.21 43.57 22.5 52.65 22.5 58.51V103.04ZM215.51 103.04V15.73H249.55C268.77 15.73 280.78 26.52 280.78 43.62C280.78 55.52 274.57 64.25 264.2 68.47L282.43 103.04H265.37L248.97 71.28H230.98V103.04ZM297 103.04V15.73H357.64V29.15H312.47V52.12H354.24V65.3H312.47V89.62H357.64V103.04ZM230.98 58.51H248.79C259.11 58.51 265.55 52.77 265.55 43.62C265.55 34.54 259.11 28.86 248.68 28.86H230.98Z"/>
-  <path fill="#0B1E3A" d="M200.74 59.39C200.74 84.27 181.17 104.45 157.03 104.45C132.89 104.45 113.33 84.27 113.33 59.39C113.33 38.58 127 21.07 145.59 15.89V31.2C135.69 35.99 128.79 46.81 128.79 59.39C128.79 76.41 141.44 90.21 157.03 90.21C172.63 90.21 185.27 76.41 185.27 59.39C185.27 46.81 178.37 35.99 168.48 31.2V15.89C187.07 21.07 200.74 38.58 200.74 59.39Z"/>
-  <path fill="#0096DB" d="M150.23 21.13C150.23 17.38 153.27 14.33 157.03 14.33C160.79 14.33 163.84 17.38 163.84 21.13V48.98C163.84 52.73 160.79 55.78 157.03 55.78C153.27 55.78 150.23 52.73 150.23 48.98Z"/>
-  <path fill="#0096DB" d="M597.34 103.04 573.79 15.73H590.14L601.68 62.79C603.44 70.4 605.08 78.02 606.54 85.7C608.13 78.02 609.83 70.4 611.7 62.79L623.71 15.73H640.06L651.95 62.79C653.83 70.34 655.53 77.9 657.11 85.4C658.63 77.9 660.27 70.34 662.03 62.79L673.58 15.73H689.98L666.37 103.04H648.85L635.49 52.53C634.2 47.73 633.09 42.51 631.86 36.71C630.63 42.51 629.51 47.73 628.22 52.53L614.92 103.04ZM778.24 103.04V15.73H812.29C831.51 15.73 843.52 26.52 843.52 43.62C843.52 55.52 837.31 64.25 826.94 68.47L845.16 103.04H828.11L811.7 71.28H793.71V103.04ZM406.03 103.04V15.73H439.37C458.53 15.73 470.54 26.52 470.54 43.62C470.54 60.79 458.24 71.63 439.08 71.63H421.5V103.04ZM702.21 103.04V15.73H762.85V29.15H717.68V52.12H759.45V65.3H717.68V89.62H762.85V103.04ZM793.71 58.51H811.53C821.84 58.51 828.28 52.77 828.28 43.62C828.28 34.54 821.84 28.86 811.41 28.86H793.71ZM421.5 58.39H438.49C448.92 58.39 455.31 52.77 455.31 43.62C455.31 34.54 448.92 28.98 438.49 28.98H421.5Z"/>
-  <path fill="#0096DB" d="M568.69 59.39C568.69 84.27 549.12 104.45 524.98 104.45C500.84 104.45 481.27 84.27 481.27 59.39C481.27 38.58 494.95 21.07 513.53 15.89V31.2C503.64 35.99 496.74 46.81 496.74 59.39C496.74 76.41 509.38 90.21 524.98 90.21C540.58 90.21 553.22 76.41 553.22 59.39C553.22 46.81 546.32 35.99 536.43 31.2V15.89C555.01 21.07 568.69 38.58 568.69 59.39Z"/>
-  <path fill="#0B1E3A" d="M518.17 21.13C518.17 17.38 521.22 14.33 524.98 14.33C528.74 14.33 531.79 17.38 531.79 21.13V48.98C531.79 52.73 528.74 55.78 524.98 55.78C521.22 55.78 518.17 52.73 518.17 48.98Z"/>
+  <path fill="#0B1E3A" d="M7.27 0V-87.3H29.53L46.52 -41.43C48.16 -36.56 50.98 -27.83 53.03 -21.04C55.08 -27.83 57.89 -36.56 59.47 -41.43L76.17 -87.3H98.55V0H83.32V-44.53C83.32 -50.68 83.61 -60.35 83.85 -69.32C80.74 -59.47 77.75 -49.86 75.88 -44.53L59.24 0H46.58L29.82 -44.53C28.01 -49.63 25.08 -58.65 22.03 -68.09C22.21 -59.47 22.5 -50.39 22.5 -44.53V0ZM215.51 0V-87.3H249.55C268.77 -87.3 280.78 -76.52 280.78 -59.41C280.78 -47.52 274.57 -38.79 264.2 -34.57L282.43 0H265.37L248.97 -31.76H230.98V0ZM297 0V-87.3H357.64V-73.89H312.47V-50.92H354.24V-37.73H312.47V-13.42H357.64V0ZM230.98 -44.53H248.79C259.11 -44.53 265.55 -50.27 265.55 -59.41C265.55 -68.5 259.11 -74.18 248.68 -74.18H230.98Z"/>
+  <path fill="#0B1E3A" d="M200.74 -43.65C200.74 -18.77 181.17 1.41 157.03 1.41C132.89 1.41 113.33 -18.77 113.33 -43.65C113.33 -64.45 127 -81.96 145.59 -87.15V-71.84C135.69 -67.05 128.79 -56.23 128.79 -43.65C128.79 -26.63 141.44 -12.82 157.03 -12.82C172.63 -12.82 185.27 -26.63 185.27 -43.65C185.27 -56.23 178.37 -67.05 168.48 -71.84V-87.15C187.07 -81.96 200.74 -64.45 200.74 -43.65Z"/>
+  <path fill="#0096DB" d="M150.23 -81.9C150.23 -85.66 153.27 -88.71 157.03 -88.71C160.79 -88.71 163.84 -85.66 163.84 -81.9V-54.06C163.84 -50.3 160.79 -47.26 157.03 -47.26C153.27 -47.26 150.23 -50.3 150.23 -54.06Z"/>
+  <path fill="#0096DB" d="M198.58 118.73 175.02 31.43H191.37L202.91 78.48C204.67 86.1 206.31 93.71 207.78 101.39C209.36 93.71 211.06 86.1 212.93 78.48L224.95 31.43H241.29L253.19 78.48C255.06 86.04 256.76 93.6 258.34 101.1C259.87 93.6 261.51 86.04 263.27 78.48L274.81 31.43H291.21L267.6 118.73H250.08L236.72 68.23C235.43 63.42 234.32 58.21 233.09 52.41C231.86 58.21 230.75 63.42 229.46 68.23L216.16 118.73ZM379.48 118.73V31.43H413.52C432.74 31.43 444.75 42.21 444.75 59.32C444.75 71.21 438.54 79.95 428.17 84.16L446.39 118.73H429.34L412.93 86.98H394.95V118.73ZM7.27 118.73V31.43H40.61C59.77 31.43 71.78 42.21 71.78 59.32C71.78 76.49 59.47 87.33 40.31 87.33H22.73V118.73ZM303.44 118.73V31.43H364.09V44.85H318.91V67.82H360.69V81H318.91V105.32H364.09V118.73ZM394.95 74.2H412.76C423.07 74.2 429.52 68.46 429.52 59.32C429.52 50.24 423.07 44.55 412.64 44.55H394.95ZM22.73 74.09H39.73C50.16 74.09 56.54 68.46 56.54 59.32C56.54 50.24 50.16 44.67 39.73 44.67H22.73Z"/>
+  <path fill="#0096DB" d="M169.92 75.08C169.92 99.97 150.35 120.14 126.21 120.14C102.07 120.14 82.51 99.97 82.51 75.08C82.51 54.28 96.18 36.77 114.77 31.58V46.89C104.87 51.69 97.97 62.5 97.97 75.08C97.97 92.11 110.62 105.91 126.21 105.91C141.81 105.91 154.45 92.11 154.45 75.08C154.45 62.5 147.55 51.69 137.66 46.89V31.58C156.25 36.77 169.92 54.28 169.92 75.08Z"/>
+  <path fill="#0B1E3A" d="M119.41 36.83C119.41 33.07 122.45 30.02 126.21 30.02C129.97 30.02 133.02 33.07 133.02 36.83V64.67C133.02 68.43 129.97 71.48 126.21 71.48C122.45 71.48 119.41 68.43 119.41 64.67Z"/>
 </svg>
-<figcaption>Primary: 120 px / 30 mm wide</figcaption></figure>
-<figure><svg class="" style="width:80px" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 -97.99 626.03 225.67" role="img">
+</span></div></figure><figure class="csf"><div class="cs" style="--w:210px;--x:calc(var(--w) * 0.1147)"><span class="x">X</span><span class="inner"><svg style="display:block;width:var(--w);max-width:100%" xmlns="http://www.w3.org/2000/svg" viewBox="-26.05 -26.05 435.74 260.1" role="img">
   <title>MORE POWER</title>
-  <path fill="#0B1E3A" d="M7.27 0V-87.3H29.53L46.52 -41.43C48.16 -36.56 50.98 -27.83 53.03 -21.04C55.08 -27.83 57.89 -36.56 59.47 -41.43L76.17 -87.3H98.55V0H83.32V-44.53C83.32 -50.68 83.61 -60.35 83.85 -69.32C80.74 -59.47 77.75 -49.86 75.88 -44.53L59.24 0H46.58L29.82 -44.53C28.01 -49.63 25.08 -58.65 22.03 -68.09C22.21 -59.47 22.5 -50.39 22.5 -44.53V0Z"/>
-  <path fill="#0B1E3A" d="M339.5 0V-87.3H373.54C392.76 -87.3 404.78 -76.52 404.78 -59.41C404.78 -47.52 398.56 -38.79 388.19 -34.57L406.42 0H389.36L372.96 -31.76H354.97V0ZM420.99 0V-87.3H481.63V-73.89H436.46V-50.92H478.23V-37.73H436.46V-13.42H481.63V0ZM354.97 -44.53H372.78C383.1 -44.53 389.54 -50.27 389.54 -59.41C389.54 -68.5 383.1 -74.18 372.67 -74.18H354.97Z"/>
-  <path fill="#0096DB" d="M38.09 116.99V29.68H71.43C90.59 29.68 102.6 40.46 102.6 57.57C102.6 74.74 90.29 85.58 71.13 85.58H53.55V116.99ZM53.55 72.34H70.55C80.98 72.34 87.36 66.71 87.36 57.57C87.36 48.49 80.98 42.93 70.55 42.93H53.55Z"/>
-  <path fill="#0096DB" d="M356.55 116.99 333 29.68H349.35L360.89 76.73C362.65 84.35 364.29 91.97 365.75 99.64C367.33 91.97 369.03 84.35 370.91 76.73L382.92 29.68H399.27L411.16 76.73C413.04 84.29 414.74 91.85 416.32 99.35C417.84 91.85 419.48 84.29 421.24 76.73L432.78 29.68H449.19L425.58 116.99H408.06L394.7 66.48C393.41 61.68 392.29 56.46 391.06 50.66C389.83 56.46 388.72 61.68 387.43 66.48L374.13 116.99ZM537.45 116.99V29.68H571.5C590.71 29.68 602.73 40.46 602.73 57.57C602.73 69.47 596.51 78.2 586.14 82.42L604.37 116.99H587.32L570.91 85.23H552.92V116.99ZM461.42 116.99V29.68H522.06V43.1H476.89V66.07H518.66V79.25H476.89V103.57H522.06V116.99ZM552.92 72.46H570.73C581.05 72.46 587.49 66.71 587.49 57.57C587.49 48.49 581.05 42.81 570.62 42.81H552.92Z"/>
-  <path fill="#0B1E3A" d="M141.79 14.84H118.58C118.58 -36.32 154.56 -78.81 201.86 -87.2V-65.33C167.46 -57.02 141.79 -24.28 141.79 14.84ZM319.47 14.84H296.27C296.27 -24.28 270.6 -57.02 236.2 -65.33V-87.2C283.49 -78.81 319.47 -36.32 319.47 14.84Z"/>
-  <path fill="#0096DB" d="M319.47 14.84C319.47 72.03 274.5 118.39 219.03 118.39C163.55 118.39 118.58 72.03 118.58 14.84H141.79C141.79 60.24 176.37 97.05 219.03 97.05C261.69 97.05 296.27 60.24 296.27 14.84Z"/>
-  <path fill="#0096DB" d="M208.82 -78.5C208.82 -84.14 213.39 -88.71 219.03 -88.71C224.67 -88.71 229.24 -84.14 229.24 -78.5V-3.65C229.24 1.99 224.67 6.56 219.03 6.56C213.39 6.56 208.82 1.99 208.82 -3.65Z"/>
-</svg>
-<figcaption>Secondary: 80 px / 22 mm wide</figcaption></figure>
-<figure><svg class="" style="width:48px" xmlns="http://www.w3.org/2000/svg" viewBox="-25.76 -25.76 431.52 259.52" role="img">
-  <title>MORE POWER</title>
-  <path fill="#0B1E3A" d="M190.17 154.78C172.77 184.24 140.69 204 104 204C48.77 204 4 159.23 4 104C4 56.07 37.71 16.02 82.72 6.27V35.2C53.34 44.27 32 71.64 32 104C32 143.77 64.23 176 104 176C137.43 176 165.54 153.21 173.65 122.32Q176.22 136.98 183 150.44Q184.16 152.76 186.47 153.92Q188.29 154.83 190.17 154.78ZM173.65 85.68C167.34 61.63 148.91 42.5 125.28 35.2V6.27C152.88 12.25 176.23 29.62 190.17 53.22Q188.87 53.2 187.54 53.64Q184.46 54.66 183 57.56Q176.22 71.02 173.65 85.68Z"/>
+  <path fill="#0B1E3A" d="M192.65 150.32C175.95 182.23 142.52 204 104 204C48.77 204 4 159.23 4 104C4 56.07 37.71 16.02 82.72 6.27V35.2C53.34 44.27 32 71.64 32 104C32 143.77 64.23 176 104 176C140.01 176 169.84 149.57 175.16 115.05Q176.7 130.14 182.51 144.11Q184.11 147.95 187.95 149.55Q190.3 150.53 192.65 150.32ZM175.16 92.95C170.93 65.53 151.25 43.22 125.28 35.2V6.27C154.59 12.62 179.11 31.82 192.65 57.68Q190.32 57.48 187.98 58.44Q184.12 60.03 182.51 63.89Q176.7 77.86 175.16 92.95Z"/>
   <path fill="#0096DB" d="M91.12 16.88C91.12 9.77 96.89 4 104 4C111.11 4 116.88 9.77 116.88 16.88V83.12C116.88 90.23 111.11 96 104 96C96.89 96 91.12 90.23 91.12 83.12Z"/>
-  <path fill="#0096DB" d="M376 104C376 159.23 331.23 204 276 204C239.31 204 207.23 184.24 189.83 154.78Q191.13 154.8 192.46 154.36Q195.54 153.34 197 150.44Q203.78 136.98 206.35 122.32C214.46 153.21 242.57 176 276 176C315.77 176 348 143.77 348 104C348 71.64 326.66 44.27 297.28 35.2V6.27C342.29 16.02 376 56.07 376 104ZM189.83 53.22C203.77 29.62 227.12 12.25 254.72 6.27V35.2C231.09 42.5 212.66 61.63 206.35 85.68Q203.78 71.02 197 57.56Q195.84 55.24 193.53 54.08Q191.71 53.17 189.83 53.22Z"/>
-  <path fill="#0B1E3A" d="M263.12 16.88C263.12 9.77 268.89 4 276 4C283.11 4 288.88 9.77 288.88 16.88V83.12C288.88 90.23 283.11 96 276 96C268.89 96 263.12 90.23 263.12 83.12Z"/>
-  <path fill="#00B0FF" d="M200.08 104Q200.08 126.9 190 146.92Q179.92 126.9 179.92 104Q179.92 81.1 190 61.08Q200.08 81.1 200.08 104Z"/>
+  <path fill="#0096DB" d="M379.64 104C379.64 159.23 334.87 204 279.64 204C241.12 204 207.69 182.23 190.99 150.32Q193.32 150.52 195.66 149.56Q199.52 147.97 201.13 144.11Q206.94 130.14 208.48 115.05C213.8 149.57 243.63 176 279.64 176C319.41 176 351.64 143.77 351.64 104C351.64 71.64 330.3 44.27 300.92 35.2V6.27C345.93 16.02 379.64 56.07 379.64 104ZM190.99 57.68C204.53 31.82 229.05 12.62 258.36 6.27V35.2C232.39 43.22 212.71 65.53 208.48 92.95Q206.94 77.86 201.13 63.89Q199.53 60.05 195.69 58.45Q193.34 57.47 190.99 57.68Z"/>
+  <path fill="#0B1E3A" d="M266.76 16.88C266.76 9.77 272.53 4 279.64 4C286.75 4 292.52 9.77 292.52 16.88V83.12C292.52 90.23 286.75 96 279.64 96C272.53 96 266.76 90.23 266.76 83.12Z"/>
+  <path fill="#00B0FF" d="M198.96 104Q198.96 123.08 191.82 140.24Q184.68 123.08 184.68 104Q184.68 84.92 191.82 67.76Q198.96 84.92 198.96 104Z"/>
 </svg>
-<figcaption>Mark with core: 48 px / 14 mm wide<br>(small cut from 24 px)</figcaption></figure>
-<figure><svg class="" style="width:16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img">
-  <title>MORE POWER</title>
-  <path fill="#0B1E3A" d="M240 134C240 195.86 189.86 246 128 246C66.14 246 16 195.86 16 134C16 82.04 51.38 38.34 99.37 25.69V66.05C74.03 77.47 56.32 103.6 56.32 134C56.32 174.92 88.41 208.1 128 208.1C167.59 208.1 199.68 174.92 199.68 134C199.68 103.6 181.97 77.47 156.63 66.05V25.69C204.62 38.34 240 82.04 240 134Z"/>
-  <path fill="#0096DB" d="M109.86 40.14C109.86 30.12 117.98 22 128 22C138.02 22 146.14 30.12 146.14 40.14V115.86C146.14 125.88 138.02 134 128 134C117.98 134 109.86 125.88 109.86 115.86Z"/>
-</svg>
-<figcaption>Single O: 16 px</figcaption></figure>
-</div></section>
+</span></div></figure></div></section>
 
-<section><h2>5. Colour</h2><p class="sub">Use one blue per background. On light backgrounds use Deep blue, which has enough contrast for small sizes. On navy or other dark backgrounds use Electric blue. CMYK and Pantone values are close matches; check them against a printed swatch book before the first print run.</p>
-<div class="grid"><div class="sw"><div class="chip" style="background:#0B1E3A"></div><b>Navy</b><code>#0B1E3A</code><span>RGB 11 30 58</span><span>C100 M78 Y30 K55</span><span>Pantone 289 C</span><em>MORE, text, dark backgrounds</em></div><div class="sw"><div class="chip" style="background:#0096DB"></div><b>Deep blue</b><code>#0096DB</code><span>RGB 0 150 219</span><span>C85 M25 Y0 K0</span><span>Pantone 2925 C</span><em>POWER and switches on light backgrounds</em></div><div class="sw"><div class="chip" style="background:#00B0FF"></div><b>Electric blue</b><code>#00B0FF</code><span>RGB 0 176 255</span><span>C70 M10 Y0 K0</span><span>Pantone 2995 C</span><em>POWER and switches on dark backgrounds</em></div><div class="sw"><div class="chip" style="background:#F8FAFC"></div><b>Off-white</b><code>#F8FAFC</code><span>RGB 248 250 252</span><span>C2 M1 Y0 K0</span><span>Pantone —</span><em>Reversed artwork, light backgrounds</em></div></div>
-<p style="margin-top:16px">One-colour versions, in black, white or navy, are for single-colour printing, embossing, engraving and fax. Don't make two-colour versions in other colours.</p></section>
+<section><h2>5. Minimum size</h2><p class="sub">All sizes are minimum <b>width</b>, not height. Below them, switch to the next version in the list.</p>
+<table><tr><th>Version</th><th>Digital</th><th>Print</th></tr><tr><td>Primary</td><td>128 px</td><td>30 mm</td></tr><tr><td>Stacked</td><td>96 px</td><td>24 mm</td></tr><tr><td>Expressive shared-O</td><td>120 px</td><td>30 mm</td></tr><tr><td>Mark — standard (with core)</td><td>48 px</td><td>12 mm</td></tr><tr><td>Mark — small cut (core left open)</td><td>24–47 px</td><td>use standard</td></tr><tr><td>Single O</td><td>16–23 px</td><td>—</td></tr></table></section>
 
 <section><h2>6. Typography</h2>
-<ul><li><b>Logo:</b> Inter Display SemiBold, with custom Os. It is already outlined, so you never need to type the logo.</li>
-<li><b>Headlines:</b> Inter Display, SemiBold or Bold. <b>Body:</b> Inter, Regular and Medium.</li>
-<li><b>Licence:</b> SIL Open Font License, free for commercial use. Fallback: <code>system-ui, -apple-system, "Segoe UI", sans-serif</code>.</li></ul></section>
+<ul><li><b>Source of the wordmark:</b> Inter Display, version 4.000 (git a52131595), SemiBold, weight 600. Inter Display is the static display optical size of Inter.</li>
+<li><b>Spacing:</b> tracking +35/1000 em, word space 0.24 em, the font's own OpenType kerning, and Os optically fitted by hand.</li>
+<li><b>The Os</b> are custom geometry: power-button rings matched to the font's overshoot and stroke contrast. They are not glyphs from the font.</li>
+<li><b>Production files</b> use outlined artwork and don't need the font. Never retype the logo.</li>
+<li><b>Brand typefaces:</b> Inter Display (SemiBold or Bold) for headlines; Inter (Regular and Medium) for text. Licence: SIL Open Font License 1.1, free for commercial use. Fallback: <code>system-ui, -apple-system, "Segoe UI", sans-serif</code>.</li></ul></section>
 
-<section><h2>7. Don'ts</h2><div class="grid"><figure class="dont"><div class="dbox"><svg class="d" style="transform:scaleX(1.35)" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
+<section><h2>7. Motion</h2>
+<p>The supplied switch-on animation plays once and holds. Do not loop it by default. When the viewer has asked for reduced motion (<code>prefers-reduced-motion</code>), show the static logo instead. Don't animate the logo in any other way.</p></section>
+
+<section><h2>8. Don'ts</h2><div class="grid"><figure class="dont"><div class="dbox"><svg style="transform:scaleX(1.35);width:72%" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
   <title>MORE POWER</title>
   <path fill="#0B1E3A" d="M7.27 103.04V15.73H29.53L46.52 61.61C48.16 66.48 50.98 75.21 53.03 82C55.08 75.21 57.89 66.48 59.47 61.61L76.17 15.73H98.55V103.04H83.32V58.51C83.32 52.36 83.61 42.69 83.85 33.72C80.74 43.57 77.75 53.18 75.88 58.51L59.24 103.04H46.58L29.82 58.51C28.01 53.41 25.08 44.39 22.03 34.95C22.21 43.57 22.5 52.65 22.5 58.51V103.04ZM215.51 103.04V15.73H249.55C268.77 15.73 280.78 26.52 280.78 43.62C280.78 55.52 274.57 64.25 264.2 68.47L282.43 103.04H265.37L248.97 71.28H230.98V103.04ZM297 103.04V15.73H357.64V29.15H312.47V52.12H354.24V65.3H312.47V89.62H357.64V103.04ZM230.98 58.51H248.79C259.11 58.51 265.55 52.77 265.55 43.62C265.55 34.54 259.11 28.86 248.68 28.86H230.98Z"/>
   <path fill="#0B1E3A" d="M200.74 59.39C200.74 84.27 181.17 104.45 157.03 104.45C132.89 104.45 113.33 84.27 113.33 59.39C113.33 38.58 127 21.07 145.59 15.89V31.2C135.69 35.99 128.79 46.81 128.79 59.39C128.79 76.41 141.44 90.21 157.03 90.21C172.63 90.21 185.27 76.41 185.27 59.39C185.27 46.81 178.37 35.99 168.48 31.2V15.89C187.07 21.07 200.74 38.58 200.74 59.39Z"/>
@@ -174,7 +169,7 @@ ul{margin:0;padding-left:20px} li{margin:4px 0}
   <path fill="#0096DB" d="M568.69 59.39C568.69 84.27 549.12 104.45 524.98 104.45C500.84 104.45 481.27 84.27 481.27 59.39C481.27 38.58 494.95 21.07 513.53 15.89V31.2C503.64 35.99 496.74 46.81 496.74 59.39C496.74 76.41 509.38 90.21 524.98 90.21C540.58 90.21 553.22 76.41 553.22 59.39C553.22 46.81 546.32 35.99 536.43 31.2V15.89C555.01 21.07 568.69 38.58 568.69 59.39Z"/>
   <path fill="#0B1E3A" d="M518.17 21.13C518.17 17.38 521.22 14.33 524.98 14.33C528.74 14.33 531.79 17.38 531.79 21.13V48.98C531.79 52.73 528.74 55.78 524.98 55.78C521.22 55.78 518.17 52.73 518.17 48.98Z"/>
 </svg>
-</div><figcaption>Don't stretch or squash</figcaption></figure><figure class="dont"><div class="dbox"><svg class="d" style="filter:hue-rotate(140deg)" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
+</div><figcaption>Don't stretch or squash</figcaption></figure><figure class="dont"><div class="dbox"><svg style="filter:hue-rotate(140deg);width:72%" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
   <title>MORE POWER</title>
   <path fill="#0B1E3A" d="M7.27 103.04V15.73H29.53L46.52 61.61C48.16 66.48 50.98 75.21 53.03 82C55.08 75.21 57.89 66.48 59.47 61.61L76.17 15.73H98.55V103.04H83.32V58.51C83.32 52.36 83.61 42.69 83.85 33.72C80.74 43.57 77.75 53.18 75.88 58.51L59.24 103.04H46.58L29.82 58.51C28.01 53.41 25.08 44.39 22.03 34.95C22.21 43.57 22.5 52.65 22.5 58.51V103.04ZM215.51 103.04V15.73H249.55C268.77 15.73 280.78 26.52 280.78 43.62C280.78 55.52 274.57 64.25 264.2 68.47L282.43 103.04H265.37L248.97 71.28H230.98V103.04ZM297 103.04V15.73H357.64V29.15H312.47V52.12H354.24V65.3H312.47V89.62H357.64V103.04ZM230.98 58.51H248.79C259.11 58.51 265.55 52.77 265.55 43.62C265.55 34.54 259.11 28.86 248.68 28.86H230.98Z"/>
   <path fill="#0B1E3A" d="M200.74 59.39C200.74 84.27 181.17 104.45 157.03 104.45C132.89 104.45 113.33 84.27 113.33 59.39C113.33 38.58 127 21.07 145.59 15.89V31.2C135.69 35.99 128.79 46.81 128.79 59.39C128.79 76.41 141.44 90.21 157.03 90.21C172.63 90.21 185.27 76.41 185.27 59.39C185.27 46.81 178.37 35.99 168.48 31.2V15.89C187.07 21.07 200.74 38.58 200.74 59.39Z"/>
@@ -183,7 +178,7 @@ ul{margin:0;padding-left:20px} li{margin:4px 0}
   <path fill="#0096DB" d="M568.69 59.39C568.69 84.27 549.12 104.45 524.98 104.45C500.84 104.45 481.27 84.27 481.27 59.39C481.27 38.58 494.95 21.07 513.53 15.89V31.2C503.64 35.99 496.74 46.81 496.74 59.39C496.74 76.41 509.38 90.21 524.98 90.21C540.58 90.21 553.22 76.41 553.22 59.39C553.22 46.81 546.32 35.99 536.43 31.2V15.89C555.01 21.07 568.69 38.58 568.69 59.39Z"/>
   <path fill="#0B1E3A" d="M518.17 21.13C518.17 17.38 521.22 14.33 524.98 14.33C528.74 14.33 531.79 17.38 531.79 21.13V48.98C531.79 52.73 528.74 55.78 524.98 55.78C521.22 55.78 518.17 52.73 518.17 48.98Z"/>
 </svg>
-</div><figcaption>Don't recolour</figcaption></figure><figure class="dont"><div class="dbox"><svg class="d" style="filter:drop-shadow(4px 6px 3px rgba(0,0,0,.45))" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
+</div><figcaption>Don't recolour</figcaption></figure><figure class="dont"><div class="dbox"><svg style="filter:drop-shadow(4px 6px 3px rgba(0,0,0,.45));width:72%" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
   <title>MORE POWER</title>
   <path fill="#0B1E3A" d="M7.27 103.04V15.73H29.53L46.52 61.61C48.16 66.48 50.98 75.21 53.03 82C55.08 75.21 57.89 66.48 59.47 61.61L76.17 15.73H98.55V103.04H83.32V58.51C83.32 52.36 83.61 42.69 83.85 33.72C80.74 43.57 77.75 53.18 75.88 58.51L59.24 103.04H46.58L29.82 58.51C28.01 53.41 25.08 44.39 22.03 34.95C22.21 43.57 22.5 52.65 22.5 58.51V103.04ZM215.51 103.04V15.73H249.55C268.77 15.73 280.78 26.52 280.78 43.62C280.78 55.52 274.57 64.25 264.2 68.47L282.43 103.04H265.37L248.97 71.28H230.98V103.04ZM297 103.04V15.73H357.64V29.15H312.47V52.12H354.24V65.3H312.47V89.62H357.64V103.04ZM230.98 58.51H248.79C259.11 58.51 265.55 52.77 265.55 43.62C265.55 34.54 259.11 28.86 248.68 28.86H230.98Z"/>
   <path fill="#0B1E3A" d="M200.74 59.39C200.74 84.27 181.17 104.45 157.03 104.45C132.89 104.45 113.33 84.27 113.33 59.39C113.33 38.58 127 21.07 145.59 15.89V31.2C135.69 35.99 128.79 46.81 128.79 59.39C128.79 76.41 141.44 90.21 157.03 90.21C172.63 90.21 185.27 76.41 185.27 59.39C185.27 46.81 178.37 35.99 168.48 31.2V15.89C187.07 21.07 200.74 38.58 200.74 59.39Z"/>
@@ -192,7 +187,7 @@ ul{margin:0;padding-left:20px} li{margin:4px 0}
   <path fill="#0096DB" d="M568.69 59.39C568.69 84.27 549.12 104.45 524.98 104.45C500.84 104.45 481.27 84.27 481.27 59.39C481.27 38.58 494.95 21.07 513.53 15.89V31.2C503.64 35.99 496.74 46.81 496.74 59.39C496.74 76.41 509.38 90.21 524.98 90.21C540.58 90.21 553.22 76.41 553.22 59.39C553.22 46.81 546.32 35.99 536.43 31.2V15.89C555.01 21.07 568.69 38.58 568.69 59.39Z"/>
   <path fill="#0B1E3A" d="M518.17 21.13C518.17 17.38 521.22 14.33 524.98 14.33C528.74 14.33 531.79 17.38 531.79 21.13V48.98C531.79 52.73 528.74 55.78 524.98 55.78C521.22 55.78 518.17 52.73 518.17 48.98Z"/>
 </svg>
-</div><figcaption>Don't add shadows or effects</figcaption></figure><figure class="dont"><div class="dbox"><svg class="d" style="transform:rotate(-12deg)" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
+</div><figcaption>Don't add shadows or effects</figcaption></figure><figure class="dont"><div class="dbox"><svg style="transform:rotate(-12deg);width:72%" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
   <title>MORE POWER</title>
   <path fill="#0B1E3A" d="M7.27 103.04V15.73H29.53L46.52 61.61C48.16 66.48 50.98 75.21 53.03 82C55.08 75.21 57.89 66.48 59.47 61.61L76.17 15.73H98.55V103.04H83.32V58.51C83.32 52.36 83.61 42.69 83.85 33.72C80.74 43.57 77.75 53.18 75.88 58.51L59.24 103.04H46.58L29.82 58.51C28.01 53.41 25.08 44.39 22.03 34.95C22.21 43.57 22.5 52.65 22.5 58.51V103.04ZM215.51 103.04V15.73H249.55C268.77 15.73 280.78 26.52 280.78 43.62C280.78 55.52 274.57 64.25 264.2 68.47L282.43 103.04H265.37L248.97 71.28H230.98V103.04ZM297 103.04V15.73H357.64V29.15H312.47V52.12H354.24V65.3H312.47V89.62H357.64V103.04ZM230.98 58.51H248.79C259.11 58.51 265.55 52.77 265.55 43.62C265.55 34.54 259.11 28.86 248.68 28.86H230.98Z"/>
   <path fill="#0B1E3A" d="M200.74 59.39C200.74 84.27 181.17 104.45 157.03 104.45C132.89 104.45 113.33 84.27 113.33 59.39C113.33 38.58 127 21.07 145.59 15.89V31.2C135.69 35.99 128.79 46.81 128.79 59.39C128.79 76.41 141.44 90.21 157.03 90.21C172.63 90.21 185.27 76.41 185.27 59.39C185.27 46.81 178.37 35.99 168.48 31.2V15.89C187.07 21.07 200.74 38.58 200.74 59.39Z"/>
@@ -201,7 +196,7 @@ ul{margin:0;padding-left:20px} li{margin:4px 0}
   <path fill="#0096DB" d="M568.69 59.39C568.69 84.27 549.12 104.45 524.98 104.45C500.84 104.45 481.27 84.27 481.27 59.39C481.27 38.58 494.95 21.07 513.53 15.89V31.2C503.64 35.99 496.74 46.81 496.74 59.39C496.74 76.41 509.38 90.21 524.98 90.21C540.58 90.21 553.22 76.41 553.22 59.39C553.22 46.81 546.32 35.99 536.43 31.2V15.89C555.01 21.07 568.69 38.58 568.69 59.39Z"/>
   <path fill="#0B1E3A" d="M518.17 21.13C518.17 17.38 521.22 14.33 524.98 14.33C528.74 14.33 531.79 17.38 531.79 21.13V48.98C531.79 52.73 528.74 55.78 524.98 55.78C521.22 55.78 518.17 52.73 518.17 48.98Z"/>
 </svg>
-</div><figcaption>Don't rotate</figcaption></figure><figure class="dont"><div class="dbox"><svg class="d" style="opacity:.35" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
+</div><figcaption>Don't rotate</figcaption></figure><figure class="dont"><div class="dbox"><svg style="opacity:.35;width:72%" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
   <title>MORE POWER</title>
   <path fill="#0B1E3A" d="M7.27 103.04V15.73H29.53L46.52 61.61C48.16 66.48 50.98 75.21 53.03 82C55.08 75.21 57.89 66.48 59.47 61.61L76.17 15.73H98.55V103.04H83.32V58.51C83.32 52.36 83.61 42.69 83.85 33.72C80.74 43.57 77.75 53.18 75.88 58.51L59.24 103.04H46.58L29.82 58.51C28.01 53.41 25.08 44.39 22.03 34.95C22.21 43.57 22.5 52.65 22.5 58.51V103.04ZM215.51 103.04V15.73H249.55C268.77 15.73 280.78 26.52 280.78 43.62C280.78 55.52 274.57 64.25 264.2 68.47L282.43 103.04H265.37L248.97 71.28H230.98V103.04ZM297 103.04V15.73H357.64V29.15H312.47V52.12H354.24V65.3H312.47V89.62H357.64V103.04ZM230.98 58.51H248.79C259.11 58.51 265.55 52.77 265.55 43.62C265.55 34.54 259.11 28.86 248.68 28.86H230.98Z"/>
   <path fill="#0B1E3A" d="M200.74 59.39C200.74 84.27 181.17 104.45 157.03 104.45C132.89 104.45 113.33 84.27 113.33 59.39C113.33 38.58 127 21.07 145.59 15.89V31.2C135.69 35.99 128.79 46.81 128.79 59.39C128.79 76.41 141.44 90.21 157.03 90.21C172.63 90.21 185.27 76.41 185.27 59.39C185.27 46.81 178.37 35.99 168.48 31.2V15.89C187.07 21.07 200.74 38.58 200.74 59.39Z"/>
@@ -210,7 +205,7 @@ ul{margin:0;padding-left:20px} li{margin:4px 0}
   <path fill="#0096DB" d="M568.69 59.39C568.69 84.27 549.12 104.45 524.98 104.45C500.84 104.45 481.27 84.27 481.27 59.39C481.27 38.58 494.95 21.07 513.53 15.89V31.2C503.64 35.99 496.74 46.81 496.74 59.39C496.74 76.41 509.38 90.21 524.98 90.21C540.58 90.21 553.22 76.41 553.22 59.39C553.22 46.81 546.32 35.99 536.43 31.2V15.89C555.01 21.07 568.69 38.58 568.69 59.39Z"/>
   <path fill="#0B1E3A" d="M518.17 21.13C518.17 17.38 521.22 14.33 524.98 14.33C528.74 14.33 531.79 17.38 531.79 21.13V48.98C531.79 52.73 528.74 55.78 524.98 55.78C521.22 55.78 518.17 52.73 518.17 48.98Z"/>
 </svg>
-</div><figcaption>Don't fade or tint</figcaption></figure><figure class="dont busy"><div class="dbox"><svg class="d" style="" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
+</div><figcaption>Don't fade or tint</figcaption></figure><figure class="dont busy"><div class="dbox"><svg style=";width:72%" xmlns="http://www.w3.org/2000/svg" viewBox="-9.28 5.05 866.83 108.68" role="img">
   <title>MORE POWER</title>
   <path fill="#0B1E3A" d="M7.27 103.04V15.73H29.53L46.52 61.61C48.16 66.48 50.98 75.21 53.03 82C55.08 75.21 57.89 66.48 59.47 61.61L76.17 15.73H98.55V103.04H83.32V58.51C83.32 52.36 83.61 42.69 83.85 33.72C80.74 43.57 77.75 53.18 75.88 58.51L59.24 103.04H46.58L29.82 58.51C28.01 53.41 25.08 44.39 22.03 34.95C22.21 43.57 22.5 52.65 22.5 58.51V103.04ZM215.51 103.04V15.73H249.55C268.77 15.73 280.78 26.52 280.78 43.62C280.78 55.52 274.57 64.25 264.2 68.47L282.43 103.04H265.37L248.97 71.28H230.98V103.04ZM297 103.04V15.73H357.64V29.15H312.47V52.12H354.24V65.3H312.47V89.62H357.64V103.04ZM230.98 58.51H248.79C259.11 58.51 265.55 52.77 265.55 43.62C265.55 34.54 259.11 28.86 248.68 28.86H230.98Z"/>
   <path fill="#0B1E3A" d="M200.74 59.39C200.74 84.27 181.17 104.45 157.03 104.45C132.89 104.45 113.33 84.27 113.33 59.39C113.33 38.58 127 21.07 145.59 15.89V31.2C135.69 35.99 128.79 46.81 128.79 59.39C128.79 76.41 141.44 90.21 157.03 90.21C172.63 90.21 185.27 76.41 185.27 59.39C185.27 46.81 178.37 35.99 168.48 31.2V15.89C187.07 21.07 200.74 38.58 200.74 59.39Z"/>
@@ -220,10 +215,21 @@ ul{margin:0;padding-left:20px} li{margin:4px 0}
   <path fill="#0B1E3A" d="M518.17 21.13C518.17 17.38 521.22 14.33 524.98 14.33C528.74 14.33 531.79 17.38 531.79 21.13V48.98C531.79 52.73 528.74 55.78 524.98 55.78C521.22 55.78 518.17 52.73 518.17 48.98Z"/>
 </svg>
 </div><figcaption>Don't place on busy or low-contrast backgrounds</figcaption></figure></div>
-<ul style="margin-top:16px"><li>Don't rebuild the Os from a stock power icon, or type the name in another font.</li>
+<ul style="margin-top:16px">
+<li>Don't rebuild the Os from a stock power icon, or type the name in another font.</li>
 <li>Don't swap the colours of the two words, or of the switches.</li>
-<li>Don't separate the switch from its O, or animate the logo other than with the supplied switch-on animation.</li></ul></section>
+<li>Don't separate a switch from its O.</li>
+<li>Don't place the mark inside an unapproved circle, shield or badge.</li>
+<li>Don't use the coupled mark as an O inside the wordmark.</li>
+<li>Don't add "Fund" or any other descriptor directly to the artwork.</li>
+<li>Don't use the expressive shared-O lockup below its minimum size, or for signage and official documents.</li>
+<li>Don't put the name inside the app icon or avatar: they use the mark alone.</li></ul></section>
 
-<section><h2>8. Files</h2><table><tr><td><code>logo/more-power-wordmark.svg</code></td><td>Primary logo, light backgrounds</td></tr><tr><td><code>logo/more-power-wordmark-reversed.svg</code></td><td>Primary logo, dark backgrounds (strokes thinned 3%)</td></tr><tr><td><code>logo/more-power-mark.svg · -reversed.svg</code></td><td>Mark: icons, avatars, patterns</td></tr><tr><td><code>logo/more-power-mark-small.svg · -reversed.svg</code></td><td>Mark for 24–48 px: heavier rings, core left open</td></tr><tr><td><code>logo/more-power-shared-o.svg · -reversed.svg</code></td><td>Secondary lockup for square formats</td></tr><tr><td><code>logo/more-power-favicon-source.svg</code></td><td>Single O for 16–24 px (favicon)</td></tr><tr><td><code>variants/</code></td><td>Black, white and one-colour navy versions</td></tr><tr><td><code>png/</code></td><td>High-resolution transparent PNGs</td></tr><tr><td><code>web/</code></td><td>favicon.ico, PNG icons, webmanifest and head snippet</td></tr><tr><td><code>animation/more-power-switch-on.html</code></td><td>Switch-on animation (CSS only, 5 s loop)</td></tr><tr><td><code>presentation/</code></td><td>Presentation board and mockups</td></tr><tr><td><code>source/</code></td><td>Scripts that rebuild every file from the font</td></tr></table>
-<p style="margin-top:16px;color:var(--muted)">The trademark has not been searched yet. Run a professional trademark search before registering or printing at scale.</p></section>
+<section><h2>9. Files</h2><table><tr><td><code>logo/</code></td><td>SVG masters: primary, reversed, stacked, mark (standard and small cut), expressive shared-O, single O</td></tr><tr><td><code>variants/</code></td><td>Black, white and one-colour navy SVGs</td></tr><tr><td><code>png/</code></td><td>High-resolution transparent PNGs for screens</td></tr><tr><td><code>print/cmyk/</code></td><td>CMYK vector PDFs (exact values above; not certified PDF/X-4, see note)</td></tr><tr><td><code>print/spot/</code></td><td>Pantone spot-colour vector PDFs (289 C, 2925 C, 2995 C)</td></tr><tr><td><code>print/one-colour/</code></td><td>Black and Pantone 289 C one-colour vector PDFs</td></tr><tr><td><code>print/eps/</code></td><td>CMYK EPS files for sign makers and older workflows</td></tr><tr><td><code>print/production/</code></td><td>Simplified one-colour artwork for embroidery, engraving, laser and vinyl cutting</td></tr><tr><td><code>web/</code></td><td>favicon.ico, favicon.svg, PNG icons, site.webmanifest and head snippet</td></tr><tr><td><code>app-icons/</code></td><td>iOS sizes, Android adaptive and legacy icons, Play Store icon, social avatars</td></tr><tr><td><code>animation/</code></td><td>Switch-on animation: plays once and holds</td></tr><tr><td><code>presentation/</code></td><td>Presentation board and mockups</td></tr><tr><td><code>docs/</code></td><td>This guide as PDF, release notes, font and licence information</td></tr><tr><td><code>source/ · build.sh</code></td><td>Scripts that rebuild every file from the font</td></tr></table>
+<p class="sub" style="margin-top:12px">Print note: the CMYK and spot PDFs carry exact colour values but no embedded output-intent profile, so they are not certified PDF/X-4. Ask the printer to convert them to PDF/X-4 for their press profile, or to export from the EPS files.</p></section>
+
+<section class="legal"><h2>10. Trademark</h2>
+<p><b>The trademark has not been searched yet.</b> Power-button symbols are a crowded category, so run a professional trademark search before registering the logo or printing it at scale. The search should cover:</p>
+<ul><li>MORE POWER as a word mark;</li><li>the complete wordmark with its power-button Os;</li><li>the coupled two-O mark;</li>
+<li>the energy, investment, real-estate and infrastructure classes.</li></ul></section>
 </main></body></html>

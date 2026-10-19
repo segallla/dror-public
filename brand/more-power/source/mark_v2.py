@@ -17,8 +17,9 @@ def erode(p, g):
     st = P.Path(); p.draw(st.getPen()); st.stroke(2 * g, P.LineCap.BUTT_CAP, P.LineJoin.ROUND_JOIN, 4); st.convertConicsToQuads()
     return op(p, st, D)
 
-def build(R=100, w_k=0.28, gap_k=0.30, bar_k=0.92, bar_end=0.46, style="core", core_gap_k=0.28):
-    w = w_k * R; r = R - w; d = 2 * R - w; cy = R + 4
+def build(R=100, w_k=0.28, gap_k=0.30, bar_k=0.92, bar_end=0.46, style="core", core_gap_k=0.36, overlap_k=0.87):
+    """overlap_k: how far the rings overlap, as a fraction of the stroke (1.0 = bands just meet in a lens as wide as the stroke)."""
+    w = w_k * R; r = R - w; d = 2 * R - overlap_k * w; cy = R + 4
     c1, c2 = R + 4, R + 4 + d
     gap = gap_k * w; bw = bar_k * w; h = bw / 2 + gap
     def ring(cx):

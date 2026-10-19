@@ -1,5 +1,5 @@
 """Switch-on animation (CSS only, no script needed): the logo starts switched off in grey; MORE's switch
-presses and MORE lights up with a pulse from its O, then POWER does the same. Loops every 5 s."""
+presses and MORE lights up with a pulse from its O, then POWER does the same. Plays once and holds."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import make8 as k
@@ -42,30 +42,26 @@ h1{{font-size:22px;margin:0 0 4px}} p{{color:var(--muted);margin:0 0 20px}}
 .card.dark{{background:#0B1E3A;--off:#2A3B5C}}
 .lock{{width:min(820px,100%)}} .sym{{width:min(360px,80%)}}
 button{{font:600 14px Inter,system-ui,sans-serif;border:0;border-radius:999px;padding:10px 18px;background:#0B1E3A;color:#fff;cursor:pointer}}
-/* one 5 s cycle: MORE switches on at 0.6 s, POWER at 1.5 s, both hold, then fade off together */
-.g1.letters,.g1.ring{{animation:on1 5s linear infinite both}} .g2.letters,.g2.ring{{animation:on2 5s linear infinite both}} .g3{{animation:on3 5s linear infinite both}}
-.bar{{transform-box:fill-box;transform-origin:center}}
-.g1.bar{{animation:on1 5s linear infinite both, press1 5s cubic-bezier(.4,0,.2,1) infinite both}}
-.g2.bar{{animation:on2 5s linear infinite both, press2 5s cubic-bezier(.4,0,.2,1) infinite both}}
-.burst{{transform-box:fill-box;transform-origin:center;opacity:0}}
-.g1.burst{{animation:burst1 5s cubic-bezier(.2,.7,.3,1) infinite both}} .g2.burst{{animation:burst2 5s cubic-bezier(.2,.7,.3,1) infinite both}}
-@keyframes on1{{0%,13%{{fill:var(--off)}}17%,90%{{fill:var(--on)}}97%,100%{{fill:var(--off)}}}}
-@keyframes on2{{0%,31%{{fill:var(--off)}}35%,90%{{fill:var(--on)}}97%,100%{{fill:var(--off)}}}}
-@keyframes on3{{0%,40%{{fill:var(--off)}}46%,90%{{fill:var(--on)}}97%,100%{{fill:var(--off)}}}}
-@keyframes press1{{0%,8%{{transform:translateY(0)}}12%{{transform:translateY(28%)}}16%,100%{{transform:translateY(0)}}}}
-@keyframes press2{{0%,26%{{transform:translateY(0)}}30%{{transform:translateY(28%)}}34%,100%{{transform:translateY(0)}}}}
-@keyframes burst1{{0%,13%{{opacity:0;transform:scale(1)}}14%{{opacity:.45;transform:scale(1)}}30%,100%{{opacity:0;transform:scale(1.45)}}}}
-@keyframes burst2{{0%,31%{{opacity:0;transform:scale(1)}}32%{{opacity:.45;transform:scale(1)}}48%,100%{{opacity:0;transform:scale(1.45)}}}}
+/* plays once and holds: MORE switches on at 0.75 s, POWER at 1.65 s, the mark's core at 2.2 s */
+.letters,.ring,.bar{{animation:on .35s ease-out both}}
+.bar{{transform-box:fill-box;transform-origin:center;animation:on .35s ease-out both, press .4s cubic-bezier(.4,0,.2,1) both}}
+.burst{{transform-box:fill-box;transform-origin:center;opacity:0;animation:burst .8s cubic-bezier(.2,.7,.3,1) both}}
+.g1.letters,.g1.ring{{animation-delay:.75s}} .g1.bar{{animation-delay:.75s,.5s}} .g1.burst{{animation-delay:.75s}}
+.g2.letters,.g2.ring{{animation-delay:1.65s}} .g2.bar{{animation-delay:1.65s,1.4s}} .g2.burst{{animation-delay:1.65s}}
+.g3{{animation:on .5s ease-out 2.2s both}}
+@keyframes on{{from{{fill:var(--off)}}to{{fill:var(--on)}}}}
+@keyframes press{{0%{{transform:translateY(0)}}50%{{transform:translateY(28%)}}100%{{transform:translateY(0)}}}}
+@keyframes burst{{0%{{opacity:0;transform:scale(1)}}2%{{opacity:.45;transform:scale(1)}}100%{{opacity:0;transform:scale(1.45)}}}}
 @media (prefers-reduced-motion:reduce){{.letters,.ring,.bar,.burst{{animation:none!important}} .burst{{display:none}}}}
 </style></head><body><main>
 <h1>MORE POWER · switch-on</h1>
-<p>The logo starts switched off. MORE's switch presses and MORE lights up, then POWER; in the mark, the shared core lights last. Both stay on, then the loop restarts every 5 seconds. With reduced motion the logo simply shows switched on.</p>
+<p>The logo starts switched off. MORE's switch presses and MORE lights up, then POWER; in the mark, the shared core lights last. It plays once (2.7 s) and holds; it never loops. With reduced motion the static logo is shown instead.</p>
 <div class="card">{light}</div>
 <div class="card dark">{dark}</div>
 <div class="card">{mark}</div>
-<button id="replay" type="button">Restart</button>
+<button id="replay" type="button">Replay</button>
 </main>
 <script>
-document.getElementById('replay').addEventListener('click',()=>document.getAnimations().forEach(a=>{{a.currentTime=0;a.play()}}));
+document.getElementById('replay').addEventListener('click',()=>document.getAnimations().forEach(a=>{{a.cancel();a.play()}}));
 </script></body></html>'''
 open(os.path.join(OUT, "more-power-switch-on.html"), "w").write(html); print("ok")
